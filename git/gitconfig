@@ -5,9 +5,9 @@
 	user = jkimbo
 	token = 1edd12d05cb3e998cbc0def1b0756ea1
 [core]
-	excludesfile = /home/jkimbo/.gitignore_global
+	excludesfile = /home/jkimbo/dotfiles/git/gitignore_global
 [diff]
-    external = /home/jkimbo/bin/git_diff_wrapper
+    external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
 [pager]
     diff =
 [merge]

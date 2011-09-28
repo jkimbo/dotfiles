@@ -68,7 +68,7 @@ export LANG="en_GB.utf8"
 # prevents adding of useless commands to bash_history
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="ls:lh:ll:la:lA:lal:lAl:lgd:lagd:duh:df:dfh:cd:[bf]g:batt:exit:?q"
-export PATH="~/bin:${PATH%:.}"
+#export PATH="~/bin:${PATH%:.}"
 # PATH completion for cd (need to enter full name - no bash file completion)
 export CDPATH=".:~:~/ddsys/code"
 
@@ -138,4 +138,4 @@ function git_diff() {
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/dotfiles/bin:$PATH
