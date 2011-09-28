@@ -1,0 +1,22 @@
+[user]
+	name = Jonathan Kim
+	email = jkimbo@gmail.com
+[github]
+	user = jkimbo
+	token = 1edd12d05cb3e998cbc0def1b0756ea1
+[core]
+	excludesfile = /home/jkimbo/.gitignore_global
+[diff]
+    external = /home/jkimbo/bin/git_diff_wrapper
+[pager]
+    diff =
+[merge]
+	tool = vimdiff
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p 
