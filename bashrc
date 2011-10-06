@@ -98,6 +98,18 @@ alias octave='octave --silent'
 alias vim='vim -p'
 alias jkpc='rdesktop -u JK -f -a16 -rsound:remote 192.168.1.238'
 
+# http://eriwen.com/productivity/aliases-and-functions/
+alias ..='cd ..'
+alias ...='cd ../..'
+alias a='ant'
+alias c='cd'
+alias f='find'
+alias g='grep'
+alias h='history'
+alias o='popd'
+alias p='pushd'
+alias d='dirs'
+
 # Git aliases
 alias gs='git status '
 alias ga='git add '
