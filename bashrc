@@ -126,6 +126,7 @@ source ~/dotfiles/bin/git-completion.sh
 
 # t tasks
 alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
+alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
 ### python vars
 [[ "$PYTHONPATH" ]] &&
