@@ -77,6 +77,8 @@ set -o vi
 # use vim as editor
 export EDITOR="vim"
 
+export GIT_PS1_SHOWDIRTYSTATE="true"
+
 # alias list
 alias ll='ls -loh --group-directories-first'
 alias la='ls -A --group-directories-first'
@@ -108,6 +110,7 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
 
 ### enable bash completion
 [[ -f ~/share/bash-completion/bash-completion.sh ]] &&
