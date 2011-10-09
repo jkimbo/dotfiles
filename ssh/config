@@ -1,0 +1,11 @@
+	Host union
+		User jk708
+		HostName dougal.union.ic.ac.uk
+
+	Host jkimbo
+		User u63585467
+		HostName jkimbo.co.uk 
+
+	Host buildr
+		User jk708
+		HostName 192.168.1.241
