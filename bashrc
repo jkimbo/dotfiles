@@ -117,6 +117,7 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
@@ -145,8 +146,8 @@ alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
 ### python vars
 [[ "$PYTHONPATH" ]] &&
-    export PYTHONPATH="$PYTHONPATH:$HOME/Documents/code/python/web/" ||
-    export PYTHONPATH="$HOME/Documents/code/python/web/"
+    export PYTHONPATH="$PYTHONPATH:$HOME/code/python/" ||
+    export PYTHONPATH="$HOME/code/python/"
 
 # to use normal git diff
 function git_diff() {
