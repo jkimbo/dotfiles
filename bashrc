@@ -95,7 +95,6 @@ alias grep.l='grep -A2 -B2'
 alias luvcview.i='luvcview -f yuv -i 30'
 alias :q='exit'
 alias octave='octave --silent'
-alias vim='vim -p'
 alias jkpc='rdesktop -u JK -f -a16 -rsound:remote 192.168.1.238'
 
 # http://eriwen.com/productivity/aliases-and-functions/
@@ -117,6 +116,7 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
@@ -145,8 +145,8 @@ alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
 ### python vars
 [[ "$PYTHONPATH" ]] &&
-    export PYTHONPATH="$PYTHONPATH:$HOME/Documents/code/python/web/" ||
-    export PYTHONPATH="$HOME/Documents/code/python/web/"
+    export PYTHONPATH="$PYTHONPATH:$HOME/code/python/" ||
+    export PYTHONPATH="$HOME/code/python/"
 
 # to use normal git diff
 function git_diff() {

@@ -5,7 +5,7 @@
 	user = jkimbo
 	token = 1edd12d05cb3e998cbc0def1b0756ea1
 [core]
-	excludesfile = /home/jkimbo/dotfiles/git/gitignore_global
+	excludesfile = /home/jkimbo/dotfiles/git/cvsignore
 [diff]
     external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
 [pager]
@@ -27,7 +27,5 @@
     dump = cat-file -p 
     rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
     stats = !/home/jkimbo/dotfiles/bin/git-stats
-[core]
-	excludesfile = /home/jkimbo/dotfiles/git/gitignore_global
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
