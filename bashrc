@@ -123,12 +123,12 @@ alias gx='gitx --all'
 alias got='git '
 alias get='git '
 
-
 ### enable bash completion
-[[ -f ~/share/bash-completion/bash-completion.sh ]] &&
-    source ~/share/bash-completion/bash-completion.sh
+[ -f /etc/profile.d/bash-completion.sh ] &&
+        . /etc/profile.d/bash-completion.sh
+
 ## and for git
-source ~/dotfiles/bin/git-completion.sh
+#source ~/dotfiles/bin/git-completion.sh
 ## and for sudo
 #complete -cf sudo
 ## and for apvlv
