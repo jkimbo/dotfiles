@@ -124,8 +124,9 @@ alias got='git '
 alias get='git '
 
 ### enable bash completion
-[ -f /etc/profile.d/bash-completion.sh ] &&
-        . /etc/profile.d/bash-completion.sh
+[ -f /etc/profile.d/bash_completion.sh ] && {
+    . /etc/profile.d/bash_completion.sh
+} || echo "completion doesn't exist"
 
 ## and for git
 #source ~/dotfiles/bin/git-completion.sh
