@@ -14,53 +14,11 @@ if [[ $- != *i* ]] ; then
 fi
 
 ###############################
-## pulled from /etc/bashrc to allow changed PS1 and color control
-
-use_color=false
-safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
-match_lhs=""
-[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs}    ]] \
-    && type -P dircolors >/dev/null \
-    && match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
-
-if ${use_color} ; then
-    # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
-    if type -P dircolors >/dev/null ; then
-	if [[ -f ~/.dir_colors ]] ; then
-	    eval $(dircolors -b ~/.dir_colors)
-	elif [[ -f /etc/DIR_COLORS ]] ; then
-	    eval $(dircolors -b /etc/DIR_COLORS)
-	fi
-    fi
-    alias ls='ls --color=auto --group-directories-first'
-    alias grep='grep --colour=auto'
-    [[ ${EUID} == 0 ]] &&
-	PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] ' ||
-    PS1='[$(t | wc -l)] \[\033[01;32m\]\u@\h\[\033[01;34m\] $(__git_ps1 "(%s)") \w \$\[\033[00m\] '
-    # set color terminal
-    export TERM="xterm-color"
-else
-    # show root@ when we don't have colors
-    [[ ${EUID} == 0 ]] &&
-	PS1='\u@\h \W \$ ' ||
-	PS1='\u@\h \w \$ '
-    # set non-color terminal
-    export TERM="xterm"
-fi
-
-# Try to keep environment pollution down, EPA loves us.
-unset use_color safe_term match_lhs
-
-## end color control
-######################
-
-
-###############################
 ## Put your fun stuff here.
 ######################
+
+# Set PS1
+source ~/dotfiles/ps1.sh
 
 # set user locale
 export LANG="en_GB.utf8"
@@ -128,10 +86,6 @@ alias get='git '
     . /etc/profile.d/bash_completion.sh
 } || echo "completion doesn't exist"
 
-## and for git
-#source ~/dotfiles/bin/git-completion.sh
-## and for sudo
-#complete -cf sudo
 ## and for apvlv
 #complete -o dirnames -fX '!*.[Pp][Dd][Ff]' apvlv 
 ## and for VBA, DeSmuME
