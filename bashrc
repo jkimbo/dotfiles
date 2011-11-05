@@ -119,13 +119,14 @@ alias go='git checkout '
 alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitx --all'
+alias gr='git remote -v'
 
 alias got='git '
 alias get='git '
 
 ### enable bash completion
-[ -f /etc/profile.d/bash-completion.sh ] &&
-        . /etc/profile.d/bash-completion.sh
+[ -f /etc/profile.d/bash_completion.sh ] &&
+        . /etc/profile.d/bash_completion.sh
 
 ## and for git
 #source ~/dotfiles/bin/git-completion.sh
