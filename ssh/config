@@ -10,3 +10,6 @@ Host buildr
 Host rutler
     ProxyCommand ssh tom@bioart-portal.ee.ic.ac.uk 'nc "jk@$(< ${HOME}/rutler.ip)" 22'
     ForwardAgent yes
+Host jk-pc
+    User jkimbo
+    HostName JK-PC
