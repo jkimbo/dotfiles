@@ -88,6 +88,7 @@ alias get='git '
     . /etc/profile.d/bash_completion.sh
 } || echo "completion doesn't exist"
 
+
 ## and for apvlv
 #complete -o dirnames -fX '!*.[Pp][Dd][Ff]' apvlv 
 ## and for VBA, DeSmuME
