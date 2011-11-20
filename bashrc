@@ -66,6 +66,7 @@ alias h='history'
 alias o='popd'
 alias p='pushd'
 alias d='dirs'
+alias please='sudo'
 
 # Git aliases
 alias gs='git status '
