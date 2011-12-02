@@ -113,3 +113,8 @@ function git_diff() {
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=$HOME/dotfiles/bin:$PATH
+
+# Ros
+source /opt/ros/electric/setup.bash
+export ROS_PACKAGE_PATH=/home/jkimbo/ros_workspace:${ROS_PACKAGE_PATH}
+
