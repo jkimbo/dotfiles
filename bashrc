@@ -28,7 +28,7 @@ export HISTCONTROL="ignoreboth"
 export HISTIGNORE="ls:lh:ll:la:lA:lal:lAl:lgd:lagd:duh:df:dfh:cd:[bf]g:batt:exit:?q"
 #export PATH="~/bin:${PATH%:.}"
 # PATH completion for cd (need to enter full name - no bash file completion)
-export CDPATH=".:~:~/ddsys/code"
+#export CDPATH=".:~:~/ddsys/code"
 
 # vi like line editing
 set -o vi
@@ -116,5 +116,10 @@ export PATH=$HOME/dotfiles/bin:$PATH
 
 # Ros
 source /opt/ros/electric/setup.bash
-export ROS_PACKAGE_PATH=/home/jkimbo/ros_workspace:${ROS_PACKAGE_PATH}
+export ROS_PACKAGE_PATH=/home/jkimbo/code/rutler/ros_workspace:${ROS_PACKAGE_PATH}
 
+export EC2_HOME=~/.ec2
+export PATH=$PATH:$EC2_HOME/bin
+export EC2_PRIVATE_KEY=pk-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
+export EC2_CERT=cert-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/

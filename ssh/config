@@ -13,3 +13,7 @@ Host rutler
 Host jk-pc
     User jkimbo
     HostName JK-PC
+Host amazon_rutler
+    User ubuntu
+    HostName ec2-46-137-3-139.eu-west-1.compute.amazonaws.com 
+    IdentityFile ~/.ssh/ec2_rsa
