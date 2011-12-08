@@ -115,7 +115,9 @@ function git_diff() {
 export PATH=$HOME/dotfiles/bin:$PATH
 
 # Ros
-source /opt/ros/electric/setup.bash
+[ -f /opt/ros/electric/setup.bash ] && { 
+    source /opt/ros/electric/setup.bash 
+}
 export ROS_PACKAGE_PATH=/home/jkimbo/code/rutler/ros_workspace:${ROS_PACKAGE_PATH}
 
 export EC2_HOME=~/.ec2

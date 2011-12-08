@@ -15,5 +15,5 @@ Host jk-pc
     HostName JK-PC
 Host amazon_rutler
     User ubuntu
-    HostName ec2-46-137-3-139.eu-west-1.compute.amazonaws.com 
+    HostName 176.34.227.200
     IdentityFile ~/.ssh/ec2_rsa
