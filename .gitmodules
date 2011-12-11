@@ -7,3 +7,6 @@
 [submodule "autojump"]
 	path = autojump
 	url = https://github.com/joelthelion/autojump.git
+[submodule "bin/git-diff-grep"]
+	path = bin/git-diff-grep
+	url = https://github.com/oscardelben/git-diff-grep.git
