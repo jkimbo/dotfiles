@@ -4,3 +4,6 @@
 [submodule "bin/termroom"]
 	path = bin/termroom
 	url = git@github.com:jkimbo/termroom.git
+[submodule "autojump"]
+	path = autojump
+	url = https://github.com/joelthelion/autojump.git

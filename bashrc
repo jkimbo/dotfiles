@@ -123,3 +123,6 @@ export PATH=$PATH:$EC2_HOME/bin
 export EC2_PRIVATE_KEY=pk-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
 export EC2_CERT=cert-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+
+# Added by autojump install.sh
+source /etc/profile.d/autojump.bash
