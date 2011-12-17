@@ -33,7 +33,7 @@ if ${use_color} ; then
 	#PS1='\[\033[01;32m\]\u\[\033[00;32m\]@\[\033[00;92m\]\h\[\033[01;34m\] $(_W)\[\033[00;36m\]$(_R) \[\033[01;34m\]\$\[\033[00m\] '
     # set color terminal
     #[[ "$XAUTHORITY" ]] && export TERM="xterm-256color"
-    export TERM="xterm-color"
+    export TERM="xterm-256color"
 else
     # show root@ when we don't have colors
     [[ ${EUID} == 0 ]] &&
