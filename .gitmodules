@@ -3,7 +3,7 @@
 	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "bin/termroom"]
 	path = bin/termroom
-	url = git@github.com:jkimbo/termroom.git
+    url = https://jkimbo@github.com/jkimbo/termroom.git
 [submodule "autojump"]
 	path = autojump
 	url = https://github.com/joelthelion/autojump.git
