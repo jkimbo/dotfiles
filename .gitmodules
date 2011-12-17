@@ -10,3 +10,6 @@
 [submodule "bin/git-diff-grep"]
 	path = bin/git-diff-grep
 	url = https://github.com/oscardelben/git-diff-grep.git
+[submodule "toms-dotfiles"]
+	path = toms-dotfiles
+	url = https://github.com/TjlHope/dotfiles.git
