@@ -13,3 +13,6 @@
 [submodule "toms-dotfiles"]
 	path = toms-dotfiles
 	url = https://github.com/TjlHope/dotfiles.git
+[submodule "git/git-pull-request"]
+	path = git/git-pull-request
+	url = https://github.com/jkimbo/git-pull-request.git
