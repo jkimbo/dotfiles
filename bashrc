@@ -134,3 +134,6 @@ source /etc/profile.d/autojump.bash
 function calc {
     echo "scale=4; $1" | bc
 }
+
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
