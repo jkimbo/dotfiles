@@ -1,0 +1,10 @@
+# ~/.tmuxinator/elections.yml
+# you can make as many tabs as you wish...
+
+project_name: Elections
+project_root: ~/
+pre: 
+tabs:
+  - vimwiki: vim ~/Dropbox/Wiki/UnionElections.wiki
+  - dougal: ssh dougal
+  - perky:
