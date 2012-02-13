@@ -21,7 +21,7 @@ Host rutler
 Host jk-pc
     User jkimbo
     HostName JK-PC
-Host amazon_rutler
+Host amazon
     User ubuntu
     HostName 176.34.227.200 
     IdentityFile ~/.ssh/ec2_rsa

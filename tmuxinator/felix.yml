@@ -1,0 +1,13 @@
+# ~/.tmuxinator/felix.yml
+# you can make as many tabs as you wish...
+
+project_name: Felix
+project_root: ~/www/felix
+pre: 
+tabs:
+  - vimwiki: vim ~/Dropbox/Wiki/FelixOnline.wiki
+  - editor: vim
+  - errorlogs: tail -f /var/log/apache2/error.log
+  - timing: tail -f log/log-themes
+  - shell:
+  - server:
