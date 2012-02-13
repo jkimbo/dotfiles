@@ -69,6 +69,7 @@ alias d='dirs'
 alias please='sudo'
 
 # Git aliases
+alias git='hub'
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -128,3 +129,11 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # Added by autojump install.sh
 source /etc/profile.d/autojump.bash
+
+# calc
+function calc {
+    echo "scale=4; $1" | bc
+}
+
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
