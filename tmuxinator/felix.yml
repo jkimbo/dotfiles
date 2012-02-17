@@ -3,11 +3,11 @@
 
 project_name: Felix
 project_root: ~/www/felix
-pre: 
+pre: google-chrome felixonline.local localhost/phpmyadmin github.com/felixonline/felixonline --new-window
 tabs:
-  - vimwiki: vim ~/Dropbox/Wiki/FelixOnline.wiki
+  - wiki: vim ~/Dropbox/Wiki/FelixOnline.wiki
   - editor: vim
+  - shell: git status
   - errorlogs: tail -f /var/log/apache2/error.log
   - timing: tail -f log/log-themes
-  - shell:
   - server:
