@@ -2,9 +2,11 @@
 # you can make as many tabs as you wish...
 
 project_name: Elections
-project_root: ~/
+project_root: ~/www/elections
 pre: 
 tabs:
   - vimwiki: vim ~/Dropbox/Wiki/UnionElections.wiki
+  - vim: vim
+  - git: gs
   - dougal: ssh dougal
   - perky:

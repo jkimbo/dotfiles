@@ -1,0 +1,10 @@
+# ~/.tmuxinator/fyp.yml
+# you can make as many tabs as you wish...
+
+project_name: FYP
+project_root: ~/code/fyp
+pre: 
+tabs:
+  - vimwiki: vim ~/Dropbox/Wiki/FinalYearProject.wiki
+  - editor: vim
+  - shell: 
