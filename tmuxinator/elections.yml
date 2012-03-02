@@ -7,5 +7,6 @@ pre:
 tabs:
   - vimwiki: vim ~/Dropbox/Wiki/UnionElections.wiki
   - vim: vim
+  - git: gs
   - dougal: 
   - perky:
