@@ -3,7 +3,7 @@
 
 project_name: Felix
 project_root: ~/www/felix
-pre: google-chrome felixonline.local localhost/phpmyadmin github.com/felixonline/felixonline --new-window
+#pre: google-chrome felixonline.local localhost/phpmyadmin github.com/felixonline/felixonline --new-window
 tabs:
   - wiki: vim ~/Dropbox/Wiki/FelixOnline.wiki
   - editor: vim
