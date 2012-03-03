@@ -27,5 +27,6 @@
     dump = cat-file -p 
     rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
     stats = !/home/jkimbo/dotfiles/bin/git-stats
+    tree = log --graph --pretty=oneline --abbrev-commit --all
 [mergetool "vimdiff3"]
 	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

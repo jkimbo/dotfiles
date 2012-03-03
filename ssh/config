@@ -20,7 +20,7 @@ Host rutler
     ForwardAgent yes
 Host jk-pc
     User jkimbo
-    HostName JK-PC
+    HostName 192.168.1.118
 Host amazon
     User ubuntu
     HostName 176.34.227.200 

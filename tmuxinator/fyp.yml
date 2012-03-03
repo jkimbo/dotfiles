@@ -2,9 +2,11 @@
 # you can make as many tabs as you wish...
 
 project_name: FYP
-project_root: ~/code/fyp
-pre: 
+project_root: ~/code/fyp/
+pre: google-chrome fyp.local
 tabs:
-  - vimwiki: vim ~/Dropbox/Wiki/FinalYearProject.wiki
   - editor: vim
-  - shell: 
+  - client: supervisor client/app.js
+  - server: supervisor server/app.js
+  - console: http-console http://localhost:1337
+  - shell: git status
