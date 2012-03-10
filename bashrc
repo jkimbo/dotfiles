@@ -137,3 +137,8 @@ function calc {
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# keychain
+keychain id_rsa id_dsa
+. ~/.keychain/`uname -n`-sh
+
