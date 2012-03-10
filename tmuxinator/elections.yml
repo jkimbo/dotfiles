@@ -6,7 +6,10 @@ project_root: ~/www/elections/
 pre: 
 tabs:
   - vimwiki: vim ~/Dropbox/Wiki/UnionElections.wiki
-  - vim: vim
-  - git: gs
+  - frontend: gs
+  - stats: cd devvote && gs
+  - node: cd livestata && gs
+  - less: watch-less -e .css
+  - template: cd js/templates/build && node index.js
   - dougal: 
   - perky:
