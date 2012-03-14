@@ -23,7 +23,7 @@ alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
-alias git='hub'
+#alias git='hub'
 alias gs='git status'
 alias gc='git commit'
 alias gstsh='git stash'

@@ -50,6 +50,9 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
+# git completion
+#source ~/dotfiles/git/git-completion.bash
+
 # Customize to your needs...
 export PATH=/home/jkimbo/dotfiles/bin:/home/jkimbo/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/jkimbo/.ec2/bin
 
