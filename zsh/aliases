@@ -96,6 +96,7 @@ alias cl='clear'
 alias ps='ps aux'
 alias please='sudo'
 alias spell='aspell -a <<< '
+alias yui='java -jar ~/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar'
 
 # Zippin
 alias gz='tar -zcvf'

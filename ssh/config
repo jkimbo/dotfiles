@@ -23,3 +23,6 @@ Host amazon
     User ubuntu
     HostName 176.34.227.200 
     IdentityFile ~/.ssh/ec2_rsa
+Host imac-imperial
+    User jk708
+    HostName dyn114-244.ee.ic.ac.uk
