@@ -32,7 +32,6 @@ DISABLE_AUTO_TITLE="true"
 plugins=(vi-mode git zsh-syntax-highlighting history-substring-search)
 #plugins=(git)
 
-
 source $ZSH/oh-my-zsh.sh
 
 source /etc/profile.d/autojump.zsh
