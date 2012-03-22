@@ -6,8 +6,12 @@ project_root: ~/www/felix
 #pre: google-chrome felixonline.local localhost/phpmyadmin github.com/felixonline/felixonline --new-window
 tabs:
   - wiki: vim ~/Dropbox/Wiki/FelixOnline.wiki
-  - editor: vim
-  - git: gs
-  - errorlogs: tail -f /var/log/apache2/error.log
-  - timing: tail -f log/log-themes
+  - frontend: vim
+  - logs:         
+        layout: main-vertical
+        panes: 
+            - tail -f /var/log/apache2/error.log
+            - tail -f log/log-themes
+  - api: cd api/ && gs
+  - engine: cd engine/ && gs
   - server:
