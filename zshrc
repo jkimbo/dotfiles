@@ -55,6 +55,8 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # Customize to your needs...
 export PATH=/home/jkimbo/dotfiles/bin:/home/jkimbo/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/jkimbo/.ec2/bin
 
+export EDITOR="vim"
+
 export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
 export EC2_PRIVATE_KEY=pk-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
