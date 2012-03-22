@@ -8,7 +8,7 @@ tabs:
   - vimwiki: vim ~/Dropbox/Wiki/UnionElections.wiki
   - frontend: gs
   - stats: cd devvote && gs
-  - node: cd livestata && gs
+  - node: cd livestats && gs
   - less: watch-less -e .css
   - template: cd js/templates/build && node index.js
   - dougal: 
