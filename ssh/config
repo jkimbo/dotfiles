@@ -26,3 +26,6 @@ Host amazon
 Host imac-imperial
     User jk708
     HostName dyn114-244.ee.ic.ac.uk
+Host hpm
+    User jkimbo
+    HostName 188.221.173.65
