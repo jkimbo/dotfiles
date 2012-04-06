@@ -67,4 +67,6 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 TERM=screen-256color-bce
+#TERM=xterm-256colors
+#TERM=xterm+256colors
 

@@ -1,0 +1,9 @@
+# ~/.tmuxinator/misc.yml
+# you can make as many tabs as you wish...
+
+project_name: Misc
+project_root: ~/
+tabs:
+  - wiki: vim ~/Dropbox/Wiki/index.wiki
+  - todo: t
+  - shell: 

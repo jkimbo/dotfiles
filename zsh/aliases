@@ -99,6 +99,10 @@ alias spell='aspell -a <<< '
 alias yui='java -jar ~/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar'
 alias rsync='rsync --progress -v'
 
+# todo.txt
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='todo.sh -d ~/dotfiles/todo.cfg'
+
 # Zippin
 alias gz='tar -zcvf'
 
@@ -106,8 +110,8 @@ alias ka9='killall -9'
 alias k9='kill -9'
 
 # t tasks
-alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
-alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
+#alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
+#alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
 # calc
 eval_helper () { bc -l|perl -pe 's/(\.[^0]+)0+$|\.0+$/$1/'; }
