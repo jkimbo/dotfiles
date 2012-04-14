@@ -29,7 +29,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git zsh-syntax-highlighting history-substring-search github boom)
+plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator)
 #plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -69,4 +69,7 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 TERM=screen-256color-bce
 #TERM=xterm-256colors
 #TERM=xterm+256colors
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

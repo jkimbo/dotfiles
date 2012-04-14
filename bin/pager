@@ -1,0 +1,26 @@
+#!/bin/bash
+# Vim pager script
+# Takes stdin, creates a tempfile and then opens it in the vim 
+#
+# Example:
+#   echo 'Hello world' | pager
+
+FILE='/tmp/pager'
+
+if [ "$( tty )" != 'not a tty' ]
+then
+    echo 'Needs an input!'
+    exit 1
+fi
+
+if [[ -s $FILE ]]
+then
+    rm $FILE
+fi
+
+while read x y
+do
+    echo $x $y >> $FILE
+done
+vim $FILE < /dev/tty > /dev/tty
+

@@ -142,3 +142,5 @@ function calc {
 keychain id_rsa id_dsa
 . ~/.keychain/`uname -n`-sh
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
