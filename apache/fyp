@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+
+    ServerAlias fyp.local
+	DocumentRoot "/home/jkimbo/code/fyp/client"
+	<Directory "/home/jkimbo/code/fyp/client/">
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+</VirtualHost>

@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+
+    ServerAlias coordino.local
+	DocumentRoot "/home/jkimbo/www/coordino"
+	<Directory "/home/jkimbo/www/coordino/">
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+</VirtualHost>

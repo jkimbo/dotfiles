@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+
+    ServerAlias api.felixonline.local
+	DocumentRoot "/home/jkimbo/www/felix/api"
+	<Directory "/home/jkimbo/www/felix/api/">
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+</VirtualHost>
