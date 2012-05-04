@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -9,7 +9,7 @@ ZSH_THEME="jk"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -34,7 +34,8 @@ plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search githu
 
 source $ZSH/oh-my-zsh.sh
 
-source /etc/profile.d/autojump.zsh
+source /usr/share/autojump/autojump.sh
+#source /etc/profile.d/autojump.zsh
 
 # Configuration
 source $HOME/dotfiles/zsh/aliases
@@ -71,5 +72,5 @@ TERM=screen-256color-bce
 #TERM=xterm+256colors
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
 
