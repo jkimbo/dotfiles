@@ -74,3 +74,6 @@ TERM=screen-256color-bce
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
 
+### python vars
+export PYTHONPATH="$PYTHONPATH:$HOME/code/python/"
+
