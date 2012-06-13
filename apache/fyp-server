@@ -1,8 +1,8 @@
 <VirtualHost *:80>
 
-    ServerAlias fyp.local
-	DocumentRoot "/home/jkimbo/code/fyp/client"
-	<Directory "/home/jkimbo/code/fyp/client/">
+    ServerAlias fyp-server.local
+	DocumentRoot "/home/jkimbo/code/fyp/server"
+	<Directory "/home/jkimbo/code/fyp/server/">
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
@@ -15,8 +15,8 @@
     </Proxy>
  
     <Location />
-        ProxyPass http://localhost:3000/
-        ProxyPassReverse http://localhost:3000/
+        ProxyPass http://localhost:1337/ retry=0
+        ProxyPassReverse http://localhost:1337/
     </Location>
 
 </VirtualHost>

@@ -37,4 +37,4 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 [mergetool "vimdiff3"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = "vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
