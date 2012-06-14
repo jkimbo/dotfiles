@@ -6,17 +6,17 @@ project_root: ~/fyp/
 tabs:
   - wiki: vim ~/Dropbox/Wiki/FinalYearProject.wiki
   - client: 
-      layout: b163,213x57,0,0[213x48,0,0,213x8,0,49{106x8,0,49,106x8,107,49}]
+      layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
         - cd client && vim
-        - cd client && supervisor app.js
+        - cd client && nodemon app.js
   - server:
-      layout: be57,213x57,0,0[213x48,0,0,213x8,0,49]
+      layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
         - cd server && vim
-        - cd server && supervisor app.js
+        - cd server && nodemon app.js
   - pipe:
-      layout: be57,213x57,0,0[213x48,0,0,213x8,0,49]
+      layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
         - cd pipe && vim
-        - cd pipe && supervisor app.js
+        - cd pipe && nodemon app.js
