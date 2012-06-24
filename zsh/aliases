@@ -135,3 +135,9 @@ function apt-list-packages {
 }
 
 x() { echo $1 | copy }
+
+function server() {
+    local port="${1:-8000}"
+    xdg-open "http://localhost:${port}/"
+    python -m SimpleHTTPServer "$port"
+}

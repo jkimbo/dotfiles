@@ -9,12 +9,12 @@ tabs:
       layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
         - cd client && vim
-        - cd client && nodemon app.js
+        - cd client && nodemon --watch . app.js
   - server:
       layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
         - cd server && vim
-        - cd server && nodemon app.js
+        - cd server && nodemon --watch routes --watch . app.js
   - pipe:
       layout: 7192,151x40,0,0{110x40,0,0,40x40,111,0}
       panes: 
