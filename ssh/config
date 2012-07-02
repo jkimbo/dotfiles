@@ -32,3 +32,6 @@ Host imac-imperial
 Host hpm
     User jkimbo
     HostName 188.221.173.65
+Host agent-testing
+    User vncuser
+    HostName agent-testing.fusepump.com

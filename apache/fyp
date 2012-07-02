@@ -15,7 +15,7 @@
     </Proxy>
  
     <Location />
-        ProxyPass http://localhost:3000/
+        ProxyPass http://localhost:3000/ retry=0
         ProxyPassReverse http://localhost:3000/
     </Location>
 
