@@ -1,6 +1,7 @@
 # Vim undo files #
 ##################
 *.un~
+*~
 
 # Git merge orig files #
 ########################
@@ -45,3 +46,6 @@ Thumbs.db
 # Tags #
 #####################
 tags
+
+# Ctrlp root markers #
+.ctrlp

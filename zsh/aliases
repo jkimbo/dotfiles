@@ -87,6 +87,9 @@ alias gt='git t'
 alias got='git '
 alias get='git '
 
+# svn
+alias gits='git svn '
+
 # Common shell functions
 alias less='less -r'
 alias tf='tail -f'
@@ -115,6 +118,9 @@ alias mux='tmuxinator'
 
 # xclip
 alias copy='xclip -sel clip'
+
+# ack
+alias ack='ack-grep'
 
 # t tasks
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
