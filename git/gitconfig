@@ -13,7 +13,8 @@
 [push]
 	default = matching
 [merge]
-	tool = vimdiff3
+	tool = vimdiff
+	conflictstyle = diff3
 [mergetool "threesome"]
     cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
     trustExitCode = true
@@ -37,4 +38,6 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 [mergetool "vimdiff3"]
-	cmd = "vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+	cmd = vim -f -d -c "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
+[color]
+	ui = 1

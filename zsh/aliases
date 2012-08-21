@@ -122,6 +122,9 @@ alias copy='xclip -sel clip'
 # ack
 alias ack='ack-grep'
 
+# pgrep
+alias pgrep='pgrep -lf'
+
 # t tasks
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
