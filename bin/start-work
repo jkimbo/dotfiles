@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Start work on an issue
+#
+
+ISSUE=$1
+
+# start timer
+hamster-cli start $ISSUE
+
+# rename current window to issue name
+tmux rename-window $ISSUE
+

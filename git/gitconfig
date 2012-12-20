@@ -13,7 +13,8 @@
 [push]
   default = matching
 [merge]
-  tool = splice
+	tool = vimdiff
+	conflictstyle = diff3
 [mergetool "splice"]
   cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
   trustExitCode = true
@@ -38,3 +39,11 @@
   graft = !legit graft \"$@\"
 [mergetool "vimdiff3"]
   cmd = "vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+[http]
+	sslVerify = false
+[credential]
+	helper = store
+[color]
+	ui = true
+[format]
+	pretty = oneline

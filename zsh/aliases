@@ -120,11 +120,20 @@ alias mux='tmuxinator'
 alias copy='xclip -sel clip'
 
 # ack
-alias ack='ack-grep'
+alias ack='ack-grep --color'
+
+# nyan cat!!
+alias nyan='telnet miku.acm.uiuc.edu'
+
+# hamster timer
+alias ham='hamster-cli'
 
 # t tasks
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
+
+# typos
+alias vm='vim'
 
 # calc
 eval_helper () { bc -l|perl -pe 's/(\.[^0]+)0+$|\.0+$/$1/'; }

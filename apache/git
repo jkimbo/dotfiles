@@ -1,0 +1,38 @@
+<VirtualHost code.fusepump.local:80>
+	ServerName code.fusepump.local
+	DocumentRoot /home/jkimbo/www/gitlist
+
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride All
+	</Directory>
+
+	<Directory "/home/jkimbo/www/gitlist">
+		Allow From all
+	  Options +Indexes
+		AllowOverride all
+	</Directory>
+
+	SetEnv GIT_PROJECT_ROOT /home/jkimbo/code/fusepump
+	SetEnv GIT_HTTP_EXPORT_ALL
+
+	AliasMatch ^/git/(.*/objects/[0-9a-f]{2}/[0-9a-f]{38})$ /home/jkimbo/code/fusepump/$1
+	AliasMatch ^/git/(.*/objects/pack/pack-[0-9a-f]{40}.(pack|idx))$ /home/jkimbo/code/fusepump/$1
+	ScriptAliasMatch \
+				"(?x)^/git/(.*/(HEAD | \
+                        info/refs | \
+                        objects/info/[^/]+ | \
+                        git-(upload|receive)-pack))$" \
+        /usr/lib/git-core/git-http-backend/$1
+
+	Alias /git /home/jkimbo/www/gitlist
+
+	LogLevel debug
+
+	<Location /git>
+		AuthType Basic
+	  AuthName "FusePump Git Repositories"
+		AuthUserFile /home/jkimbo/passwd
+		Require valid-user 
+	</Location>
+</VirtualHost>

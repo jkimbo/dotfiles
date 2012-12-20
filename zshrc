@@ -77,5 +77,18 @@ TERM=screen-256color-bce
 ### python vars
 export PYTHONPATH="$PYTHONPATH:$HOME/code/python/"
 
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+## Ansible
+export ANSIBLE_HOSTS=~/ansible_hosts
+
+## Add path to sudo path
+alias sudo='sudo env PATH=$PATH'
+
+# For pidgin sipe
+export NSS_SSL_CBC_RANDOM_IV=0
+
+# Arcanist 
+PATH="$PATH:$HOME/code/arcanist/bin/"
+source /home/jkimbo/code/arcanist/resources/shell/bash-completion
+
