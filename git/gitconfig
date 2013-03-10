@@ -6,6 +6,8 @@
 	token = 1edd12d05cb3e998cbc0def1b0756ea1
 [core]
 	excludesfile = /home/jkimbo/dotfiles/git/cvsignore
+	autocrlf = off
+	safecrlf = warn
 [diff]
     external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
 [pager]
@@ -41,3 +43,7 @@
 	cmd = vim -f -d -c "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
 [color]
 	ui = 1
+[credential]
+	helper = store
+[http]
+	sslVerify = false

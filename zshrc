@@ -77,5 +77,7 @@ TERM=screen-256color-bce
 ### python vars
 export PYTHONPATH="$PYTHONPATH:$HOME/code/python/"
 
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Z
+[[ -s "$HOME/z/z.sh" ]] && source $HOME/z/z.sh

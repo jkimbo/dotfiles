@@ -7,6 +7,7 @@ Host union
 Host dougal
     User jk708
     HostName dougal.union.ic.ac.uk
+    Port 10022
 Host perky
     User jk708
     HostName perky.su.ic.ac.uk
@@ -35,3 +36,10 @@ Host hpm
 Host agent-testing
     User vncuser
     HostName agent-testing.fusepump.com
+Host amazon-bigboy
+    User ubuntu
+    HostName ec2-54-247-145-160.eu-west-1.compute.amazonaws.com
+    IdentityFile ~/.ssh/ec2_rsa
+Host pi
+    User jkimbo
+    HostName 192.168.1.74
