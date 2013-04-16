@@ -13,10 +13,10 @@
 [push]
   default = matching
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
-[mergetool "splice"]
-  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool "threesome"]
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
   trustExitCode = true
 [alias]
   co = checkout
@@ -43,10 +43,10 @@
 [mergetool "vimdiff3"]
   cmd = "vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
 [http]
-	sslVerify = false
+  sslVerify = false
 [credential]
-	helper = store
+  helper = store
 [color]
-	ui = true
+  ui = true
 [format]
-	pretty = oneline
+  pretty = oneline

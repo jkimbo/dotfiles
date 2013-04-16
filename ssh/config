@@ -1,11 +1,3 @@
-Host barkeep_vagrant
-  HostName 127.0.0.1
-  User vagrant
-  Port 2250
-  StrictHostKeyChecking no
-  PasswordAuthentication no
-  IdentityFile /home/jkimbo/.vagrant.d/insecure_private_key
-  IdentitiesOnly yes
 Host *
     ControlPath ~/.ssh/master-%r@%h:%p
     ControlMaster auto
@@ -44,7 +36,7 @@ Host imac-imperial
 Host hpm
     User jkimbo
     #HostName 188.221.173.65
-    HostName 149.241.1.226
+    #HostName 149.241.1.226
 Host pi
     User jkimbo
     #HostName 188.221.173.65
