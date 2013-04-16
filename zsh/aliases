@@ -131,6 +131,9 @@ alias ham='hamster-cli'
 # pgrep
 alias pgrep='pgrep -lf'
 
+# pgrep
+alias pgrep='pgrep -lf'
+
 # t tasks
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
