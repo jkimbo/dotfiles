@@ -32,6 +32,7 @@
 # Logs and databases #
 ######################
 *.log
+*.err
 #*.sql
 *.sqlite
 
@@ -48,4 +49,10 @@ Thumbs.db
 tags
 
 # Ctrlp root markers #
+#####################
 .ctrlp
+
+# Composer #
+#####################
+composer.lock
+vendor/

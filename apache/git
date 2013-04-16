@@ -30,9 +30,9 @@
 	LogLevel debug
 
 	<Location /git>
-		AuthType Basic
-	  AuthName "FusePump Git Repositories"
-		AuthUserFile /home/jkimbo/passwd
-		Require valid-user 
+		#AuthType Basic
+		#AuthName "FusePump Git Repositories"
+		#AuthUserFile /home/jkimbo/passwd
+		#Require valid-user 
 	</Location>
 </VirtualHost>
