@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+
+  ServerAlias phabricator.local
+	DocumentRoot "/home/jkimbo/code/fusepump/phabricator/phabricator/webroot/"
+	RewriteEngine on
+	RewriteRule ^/rsrc/(.*)     -                       [L,QSA]
+	RewriteRule ^/favicon.ico   -                       [L,QSA]
+	RewriteRule ^(.*)$          /index.php?__path__=$1  [B,L,QSA]
+
+	# This will use the config file you set up in the previous step. If you
+	# called it something other than 'myconfig', put that here.
+	SetEnv PHABRICATOR_ENV custom/myconfig.conf.php
+	<Directory "/home/jkimbo/code/fusepump/phabricator/phabricator/webroot/">
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+</VirtualHost>

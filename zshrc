@@ -29,7 +29,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator)
+plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator knife git-flow)
 #plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -81,3 +81,17 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Z
 [[ -s "$HOME/z/z.sh" ]] && source $HOME/z/z.sh
+
+## Ansible
+export ANSIBLE_HOSTS=~/ansible_hosts
+
+## Add path to sudo path
+alias sudo='sudo env PATH=$PATH'
+
+# For pidgin sipe
+export NSS_SSL_CBC_RANDOM_IV=0
+
+# Arcanist 
+PATH="$PATH:$HOME/code/arcanist/bin/"
+source /home/jkimbo/code/arcanist/resources/shell/bash-completion
+

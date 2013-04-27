@@ -1,49 +1,58 @@
 [user]
-	name = Jonathan Kim
-	email = jkimbo@gmail.com
+  name = Jonathan Kim 
+  email = jonathan.kim@fusepump.com
 [github]
-	user = jkimbo
-	token = 1edd12d05cb3e998cbc0def1b0756ea1
+  user = jkimbo
+  token = 1edd12d05cb3e998cbc0def1b0756ea1
 [core]
 	excludesfile = /home/jkimbo/dotfiles/git/cvsignore
 	autocrlf = off
 	safecrlf = warn
 [diff]
-    external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
+  external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
 [pager]
-    diff =
+  diff =
 [push]
-	default = matching
+  default = matching
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool "threesome"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
-    trustExitCode = true
+  cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+  trustExitCode = true
 [alias]
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p 
-    rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
-    stats = !/home/jkimbo/dotfiles/bin/git-stats
-    tree = log --graph --pretty=oneline --abbrev-commit --all
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p 
+  rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
+  stats = !/home/jkimbo/dotfiles/bin/git-stats
+  tree = log --graph --pretty=oneline --abbrev-commit --all
+  switch = !legit switch \"$@\"
+  branches = !legit branches
+  sprout = !legit sprout \"$@\"
+  unpublish = !legit unpublish \"$@\"
+  harvest = !legit harvest \"$@\"
+  sync = !legit sync \"$@\"
+  publish = !legit publish \"$@\"
+  graft = !legit graft \"$@\"
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 [mergetool "vimdiff3"]
-	cmd = vim -f -d -c "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
+  cmd = "vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+[http]
+  sslVerify = false
+[credential]
+  helper = store
 [color]
 	ui = 1
 [credential]
 	helper = store
 [http]
 	sslVerify = false
+[format]
+  pretty = oneline

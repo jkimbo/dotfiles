@@ -1,6 +1,9 @@
 Host *
     ControlPath ~/.ssh/master-%r@%h:%p
     ControlMaster auto
+    KeepAlive yes
+    ServerAliveInterval 60
+    ForwardAgent yes
 Host union
     User jk708
     HostName dougal.union.ic.ac.uk
