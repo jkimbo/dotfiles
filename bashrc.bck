@@ -39,7 +39,7 @@ if ${use_color} ; then
     alias grep='grep --colour=auto'
     [[ ${EUID} == 0 ]] &&
 	PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] ' ||
-    PS1='[$(t | wc -l )] \[\033[01;32m\]\u@\h\[\033[01;34m\] $(__git_ps1 "(%s)") \w \$\[\033[00m\] '
+    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] $(__git_ps1 "(%s)") \w \$\[\033[00m\] '
     # set color terminal
     export TERM="xterm-color"
 else
@@ -111,7 +111,7 @@ alias got='git '
 alias get='git '
 
 # t todo list
-alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
+#alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 
 ### enable bash completion
 [[ -f ~/share/bash-completion/bash-completion.sh ]] &&

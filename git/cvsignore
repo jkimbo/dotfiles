@@ -56,3 +56,7 @@ tags
 #####################
 composer.lock
 vendor/
+
+# Tern #
+#####################
+.tern-port
