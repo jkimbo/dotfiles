@@ -93,5 +93,5 @@ export NSS_SSL_CBC_RANDOM_IV=0
 
 # Arcanist 
 PATH="$PATH:$HOME/code/arcanist/bin/"
-source /home/jkimbo/code/arcanist/resources/shell/bash-completion
+[[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
