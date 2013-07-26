@@ -95,3 +95,8 @@ export NSS_SSL_CBC_RANDOM_IV=0
 PATH="$PATH:$HOME/code/arcanist/bin/"
 [[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
+export VIRTUALENV_DISTRIBUTE=true
+export WORKON_HOME=~/code/ofs/
+export VIRTUALENVWRAPPER_HOOK_DIR=~/code/ofs/
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+
