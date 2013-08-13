@@ -5,11 +5,11 @@
   user = jkimbo
   token = 1edd12d05cb3e998cbc0def1b0756ea1
 [core]
-	excludesfile = /home/jkimbo/dotfiles/git/cvsignore
+	excludesfile = ~/dotfiles/git/cvsignore
 	autocrlf = off
 	safecrlf = warn
 [diff]
-  external = /home/jkimbo/dotfiles/bin/git_diff_wrapper
+  external = ~/dotfiles/bin/git_diff_wrapper
 [pager]
   diff =
 [push]

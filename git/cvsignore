@@ -65,5 +65,9 @@ vendor/
 #####################
 .venv/
 
+# Python #
+#####################
+*.py[cod]
+
 .cache/
 *.egg-info/

@@ -29,12 +29,12 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator knife git-flow vagrant)
+plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator knife git-flow vagrant brew)
 #plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/share/autojump/autojump.sh
+[[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 #source /etc/profile.d/autojump.zsh
 
 # Configuration
@@ -62,7 +62,7 @@ export EC2_HOME=~/.ec2
 export PATH=$PATH:$EC2_HOME/bin
 export EC2_PRIVATE_KEY=pk-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
 export EC2_CERT=cert-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -99,4 +99,10 @@ export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/code/ofs/
 export VIRTUALENVWRAPPER_HOOK_DIR=~/code/ofs/
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+#[[ -d "/usr/local/mysql" ]] && export PATH=$PATH:/usr/local/mysql/bin
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+export PATH=$PATH:/usr/local/opt/ruby/bin
 

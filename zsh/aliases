@@ -7,6 +7,9 @@ alias psg="ps aux | grep "
 alias ..='cd ..'
 alias cdb='cd -'
 
+# New ls
+alias ls='gls --color=auto'
+
 # Show human friendly numbers and colors
 alias df='df -h'
 alias ll='ls -loh --group-directories-first'
