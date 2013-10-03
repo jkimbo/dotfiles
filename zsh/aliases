@@ -105,6 +105,8 @@ alias please='sudo'
 alias spell='aspell -a <<< '
 alias yui='java -jar ~/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar'
 alias rsync='rsync --progress -v'
+alias grunt='noglob grunt'
+alias bower='noglob bower'
 
 # todo.txt
 export TODOTXT_DEFAULT_ACTION=ls
@@ -154,6 +156,9 @@ alias vm='vim'
 eval_helper () { bc -l|perl -pe 's/(\.[^0]+)0+$|\.0+$/$1/'; }
 alias '?=eval_helper <<<'
 
+# clear pyc files
+alias cleanpyc='find . -type f -name "*.pyc" -exec rm -f {} \;'
+
 function colours() {
     for i in {0..255} ; do
         printf "\x1b[38;5;${i}mcolour${i}\n"
@@ -168,6 +173,6 @@ x() { echo $1 | copy }
 
 function server() {
     local port="${1:-8000}"
-    xdg-open "http://localhost:${port}/"
+    open "http://localhost:${port}/"
     python -m SimpleHTTPServer "$port"
 }

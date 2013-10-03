@@ -14,35 +14,3 @@ Host dougal
 Host perky
     User jk708
     HostName perky.su.ic.ac.uk
-Host jkimbo
-    User u63585467
-    HostName jkimbo.co.uk 
-Host buildr
-	User jk708
-	HostName 192.168.1.241
-Host rutler
-    ProxyCommand ssh tom@bioart-portal.ee.ic.ac.uk 'nc "jk@$(< ${HOME}/rutler.ip)" 22'
-    ForwardAgent yes
-Host jk-pc
-    User jkimbo
-    HostName 192.168.1.118
-Host amazon
-    User ubuntu
-    HostName 176.34.227.200 
-    IdentityFile ~/.ssh/ec2_rsa
-Host imac-imperial
-    User jk708
-    HostName dyn114-244.ee.ic.ac.uk
-Host hpm
-    User jkimbo
-    HostName 188.221.173.65
-Host agent-testing
-    User vncuser
-    HostName agent-testing.fusepump.com
-Host amazon-bigboy
-    User ubuntu
-    HostName ec2-54-247-145-160.eu-west-1.compute.amazonaws.com
-    IdentityFile ~/.ssh/ec2_rsa
-Host pi
-    User jkimbo
-    HostName 192.168.1.74

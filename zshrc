@@ -29,7 +29,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git zsh-syntax-highlighting ruby history-substring-search github boom tmuxinator knife git-flow vagrant brew)
+plugins=(vi-mode git zsh-syntax-highlighting history-substring-search)
 #plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -54,7 +54,7 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 #source ~/dotfiles/git/git-completion.bash
 
 # Customize to your needs...
-export PATH=/home/jkimbo/dotfiles/bin:/home/jkimbo/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/jkimbo/.ec2/bin
+export PATH=$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export EDITOR="vim"
 
