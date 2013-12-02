@@ -1,9 +1,9 @@
 [user]
     name = Jonathan Kim 
     email = jkimbo@gmail.com
-[github]
-    user = jkimbo
-    token = 1edd12d05cb3e998cbc0def1b0756ea1
+[include]
+    # For username / creds / etc
+    path = ~/.gitconfig.local
 [core]
     excludesfile = ~/dotfiles/git/cvsignore
     autocrlf = off
