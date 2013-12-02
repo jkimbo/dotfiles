@@ -107,6 +107,7 @@ alias yui='java -jar ~/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar'
 alias rsync='rsync --progress -v'
 alias grunt='noglob grunt'
 alias bower='noglob bower'
+alias ag='noglob ag'
 
 # todo.txt
 export TODOTXT_DEFAULT_ACTION=ls

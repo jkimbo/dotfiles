@@ -92,7 +92,7 @@ alias sudo='sudo env PATH=$PATH'
 export NSS_SSL_CBC_RANDOM_IV=0
 
 # Arcanist 
-PATH="$PATH:$HOME/code/arcanist/bin/"
+PATH="$PATH:$HOME/code/arcanist/bin"
 [[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
 export VIRTUALENV_DISTRIBUTE=true
@@ -106,3 +106,8 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export PATH=$PATH:/usr/local/opt/ruby/bin
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export HOMEBREW_GITHUB_API_TOKEN=6e2e57ae85ecf057acbdc380c734c83bcb40718d
