@@ -50,18 +50,11 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# git completion
-#source ~/dotfiles/git/git-completion.bash
-
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export EDITOR="vim"
 
-export EC2_HOME=~/.ec2
-export PATH=$PATH:$EC2_HOME/bin
-export EC2_PRIVATE_KEY=pk-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
-export EC2_CERT=cert-MV4F5N7OEUMPYTMGX744V4UWYAWQNFZ4.pem
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # tmuxinator
@@ -110,4 +103,6 @@ export PATH=$PATH:/usr/local/opt/ruby/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export HOMEBREW_GITHUB_API_TOKEN=6e2e57ae85ecf057acbdc380c734c83bcb40718d
+if [ -e ~/.secrets ]; then
+    source ~/.secrets
+fi
