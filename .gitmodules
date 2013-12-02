@@ -16,6 +16,3 @@
 [submodule "git/git-pull-request"]
 	path = git/git-pull-request
 	url = https://github.com/jkimbo/git-pull-request.git
-[submodule "git-extras"]
-	path = git-extras
-	url = git://github.com/visionmedia/git-extras.git
