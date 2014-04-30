@@ -103,6 +103,12 @@ export PATH=$PATH:/usr/local/opt/ruby/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### Add composer to path
+export PATH=$HOME/.composer/vendor/bin:$PATH
+
+### Docker
+export DOCKER_HOST="tcp://localhost:4243"
+
 if [ -e ~/.secrets ]; then
     source ~/.secrets
 fi
