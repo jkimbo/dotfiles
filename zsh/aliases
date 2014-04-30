@@ -150,8 +150,14 @@ alias android-disconnect="fusermount -u /media/Nexus7"
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
+# Vim logging
+alias vim='vim -w ~/.vimlog "$@"'
+
 # typos
 alias vm='vim'
+
+# refresh DHCP
+alias dhcp='echo "add State:/Network/Interface/en0/RefreshConfiguration temporary" | sudo scutil'
 
 # calc
 eval_helper () { bc -l|perl -pe 's/(\.[^0]+)0+$|\.0+$/$1/'; }
