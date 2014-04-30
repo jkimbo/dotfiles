@@ -126,7 +126,7 @@ alias mux='tmuxinator'
 alias copy='xclip -sel clip'
 
 # ack
-alias ack='ack-grep --color'
+alias ack='noglob ack'
 
 # nyan cat!!
 alias nyan='telnet miku.acm.uiuc.edu'

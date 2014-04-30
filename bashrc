@@ -53,7 +53,6 @@ alias grep.l='grep -A2 -B2'
 alias luvcview.i='luvcview -f yuv -i 30'
 alias :q='exit'
 alias octave='octave --silent'
-alias ack='ack-grep'
 
 # http://eriwen.com/productivity/aliases-and-functions/
 alias ..='cd ..'
