@@ -71,3 +71,11 @@ vendor/
 
 .cache/
 *.egg-info/
+
+# Local vim configs #
+#####################
+.vimrc
+
+# Ag ignore file #
+####################
+.agignore
