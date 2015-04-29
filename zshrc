@@ -89,8 +89,8 @@ PATH="$PATH:$HOME/code/arcanist/bin"
 [[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
 export VIRTUALENV_DISTRIBUTE=true
-export WORKON_HOME=~/code/ofs/
-export VIRTUALENVWRAPPER_HOOK_DIR=~/code/ofs/
+export WORKON_HOME=~/code/
+export VIRTUALENVWRAPPER_HOOK_DIR=~/code/
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 #[[ -d "/usr/local/mysql" ]] && export PATH=$PATH:/usr/local/mysql/bin
@@ -112,3 +112,12 @@ export DOCKER_HOST="tcp://localhost:4243"
 if [ -e ~/.secrets ]; then
     source ~/.secrets
 fi
+
+### NPM
+eval "`npm completion`"
+
+
+export CHANGELOG_GITHUB_TOKEN="ec567411eb828c154a8ab715f9c679331f9242f8"
+
+export NVM_DIR="/Users/jkimbo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

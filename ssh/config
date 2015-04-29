@@ -14,3 +14,15 @@ Host dougal
 Host perky
     User jk708
     HostName perky.su.ic.ac.uk
+Host ec2
+    User ubuntu
+    HostName 176.34.227.200
+    IdentityFile ~/.ssh/ec2_rsa
+
+Host droplet
+    User root
+    HostName 104.131.197.222
+
+Host iron
+    User jk
+    HostName 192.168.0.200

@@ -40,7 +40,6 @@
 ######################
 .DS_Store
 ehthumbs.db
-Icon?
 Thumbs.db
 *.swp
 
@@ -79,3 +78,7 @@ vendor/
 # Ag ignore file #
 ####################
 .agignore
+
+# gonzo release cache #
+######################
+release_cache/
