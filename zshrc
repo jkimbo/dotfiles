@@ -117,7 +117,5 @@ fi
 eval "`npm completion`"
 
 
-export CHANGELOG_GITHUB_TOKEN="ec567411eb828c154a8ab715f9c679331f9242f8"
-
 export NVM_DIR="/Users/jkimbo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
