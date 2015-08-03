@@ -151,7 +151,7 @@ alias android-disconnect="fusermount -u /media/Nexus7"
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
 
 # Vim logging
-alias vim='vim -w ~/.vimlog "$@"'
+#alias vim='vim -w ~/.vimlog "$@"'
 
 # typos
 alias vm='vim'

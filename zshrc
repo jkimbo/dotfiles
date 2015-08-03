@@ -51,7 +51,7 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$HOME/bin:$HOME/.bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export EDITOR="vim"
 
@@ -66,9 +66,6 @@ TERM=screen-256color-bce
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-
-### python vars
-export PYTHONPATH="$PYTHONPATH:$HOME/code/python/"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -89,9 +86,11 @@ PATH="$PATH:$HOME/code/arcanist/bin"
 [[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
 export VIRTUALENV_DISTRIBUTE=true
-export WORKON_HOME=~/code/
-export VIRTUALENVWRAPPER_HOOK_DIR=~/code/
+export WORKON_HOME=~/code/virtualenvs
+export PROJECT_HOME=$HOME/code
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pythonz/pythons/CPython-2.7.8/bin/python"
 
 #[[ -d "/usr/local/mysql" ]] && export PATH=$PATH:/usr/local/mysql/bin
 
@@ -119,3 +118,14 @@ eval "`npm completion`"
 
 export NVM_DIR="/Users/jkimbo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+
+
+# Add postgres tools to path
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+
+# Boot2docker
+export DOCKER_CERT_PATH=/Users/jkimbo/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376

@@ -20,6 +20,11 @@ Host ec2
     IdentityFile ~/.ssh/ec2_rsa
 
 Host droplet
+    User jk
+    HostName 46.101.42.15
+    ForwardAgent yes
+
+Host t-droplet
     User root
     HostName 104.131.197.222
 

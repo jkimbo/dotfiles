@@ -1,6 +1,6 @@
 [user]
     name = Jonathan Kim 
-    email = jkimbo@gmail.com
+	email = jkimbo@gmail.com
 [include]
     # For username / creds / etc
     path = ~/.gitconfig.local
