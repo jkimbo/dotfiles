@@ -31,6 +31,7 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(vi-mode git zsh-syntax-highlighting history-substring-search)
 #plugins=(git)
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,11 +52,9 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 # Customize to your needs...
-export PATH=$HOME/bin:$HOME/.bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$HOME/bin:$HOME/.bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/Dropbox/bin
 
 export EDITOR="vim"
-
-#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -80,10 +79,6 @@ alias sudo='sudo env PATH=$PATH'
 
 # For pidgin sipe
 export NSS_SSL_CBC_RANDOM_IV=0
-
-# Arcanist 
-PATH="$PATH:$HOME/code/arcanist/bin"
-[[ -s "$HOME/code/arcanist/resources/shell/bash-completion.sh" ]] && source $HOME/code/arcanist/resources/shell/bash-completion
 
 export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/code/virtualenvs
@@ -129,3 +124,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 export DOCKER_CERT_PATH=/Users/jkimbo/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+fpath=($HOME/code/desk/shell_plugins/zsh $fpath)

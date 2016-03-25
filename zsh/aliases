@@ -146,6 +146,9 @@ alias pgrep='pgrep -lf'
 alias android-connect="mtpfs -o allow_other /media/Nexus7"
 alias android-disconnect="fusermount -u /media/Nexus7"
 
+# desk shell management
+alias d.='desk .'
+
 # t tasks
 #alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
 #alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
