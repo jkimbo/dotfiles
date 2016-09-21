@@ -4,6 +4,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'MarcWeber/vim-addon-local-vimrc'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'

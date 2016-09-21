@@ -4,13 +4,52 @@ set nocompatible
 call plug#begin()
 
 try
-  source ~/dotfiles/vim/vimrc.plugs
+  source ~/dotfiles/vim/plugins
 catch
 endtry
 
 call plug#end()
 
 syntax enable
+
+" == General settings ===
+
+set history=1000  " lines of history to remember
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+
+let mapleader = ','
+let g:mapleader = ","
+let maplocalleader = "\\"
+
+set hidden                         " hides buffers instead of closing them
+
+set number                         " set numbering rows
+au StdinReadPost * setlocal nonu   " but not in man
+
+set tabstop=4                      " spaces per tab
+set softtabstop=4
+set shiftwidth=4                   " spaces per indent
+set expandtab                      " expand tabs to spaces
+set smarttab                       " at start shiftwidth, else tabstop
+set autoindent                     " indent new line to same as previous
+set smartindent                    " indent on code type
+set nolist                         " disable list on most files
+set foldenable                     " auto fold code
+set gdefault
+
+if has('statusline')
+  set laststatus=2
+
+  " Broken down into easily includeable segments
+  set statusline=%<%f\    " Filename
+  set statusline+=%{fugitive#statusline()} "  Git Hotness
+  set statusline+=\ [%{&ff}/%Y]            " filetype
+  set statusline+=\ %w%h%m%r\ " Options
+  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+
 
 function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
@@ -50,55 +89,14 @@ let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
   let g:flow#autoclose = 1
 endif
 
+" == junegunn/fzf ==
+nnoremap <leader>t :FZF<CR> 
+
 " == mxw/vim-jsx ==
 let g:jsx_ext_required = 0
 
-
-" === Keybindings ===
-
-let mapleader = ','
-let g:mapleader = ","
-let maplocalleader = "\\"
-
-""" Smart way to move windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-map gw <C-W>
-map gW <C-W>
-nnoremap <leader>w<CR> <C-w>v<C-w>l                        " open new window in vertical split
-nnoremap <leader>h<CR> <C-w>s<C-w>j                        " open new window in horizontal split
-
-" Window resizing with arrow keys
-nmap <Down> <C-W>-<C-W>-
-nmap <Up> <C-W>+<C-W>+
-nmap <right> <C-W>><C-W>>
-nmap <left> <C-W><<C-W><
-
-" Wrapped lines goes down/up to next row, rather than next line in file.
-nnoremap j gj
-nnoremap k gk
-
-" Stupid shift key fixes
-cmap Xa xa
-cmap xA xa
-
-" visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
-
-" For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null
-
-noremap <F12> <Esc>:syntax sync fromstart<CR>       " fix syntax highlighting problems
-inoremap <F12> <C-o>:syntax sync fromstart<CR>      " fix syntax highlighting problems
-
-" Copy to system clipboard
-vnoremap <leader>y "*y
-
-" == junegunn/fzf ==
-nnoremap <leader>t :FZF<CR> 
+" == fholgado/minibufexpl.vim ==
+let g:miniBufExplorerMoreThanOne = 0
 
 " == scrooloose/nerdtree ==
 map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
@@ -109,3 +107,6 @@ let g:NERDTreeIgnore=['\.pyc','\~$', '\.swo$', '\.swp$', '\.git$', '\.hg$', '\.s
 let g:NERDTreeShowHidden=1
 let g:NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeWinSize=20
+
+" === Keybindings ===
+source ~/dotfiles/vim/keybindings
