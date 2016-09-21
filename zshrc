@@ -100,9 +100,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Add composer to path
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
-### Docker
-export DOCKER_HOST="tcp://localhost:4243"
-
 if [ -e ~/.secrets ]; then
     source ~/.secrets
 fi
@@ -120,11 +117,22 @@ export NVM_DIR="/Users/jkimbo/.nvm"
 # Add postgres tools to path
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
-# Boot2docker
-export DOCKER_CERT_PATH=/Users/jkimbo/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 fpath=($HOME/code/desk/shell_plugins/zsh $fpath)
+
+# Android
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+
+# m-cli
+export PATH=$PATH:/usr/local/m-cli
+
+# ocaml
+eval `opam config env`
+. /Users/jkimbo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# love2d
+export PATH=$PATH:/Applications/love.app/Contents/MacOS
+# Tiled
+export PATH=$PATH:/Applications/Tiled.app/Contents/MacOS

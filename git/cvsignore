@@ -67,6 +67,7 @@ vendor/
 # Python #
 #####################
 *.py[cod]
+*.eggs/
 
 .cache/
 *.egg-info/
