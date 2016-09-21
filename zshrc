@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+# Path to your zsh configuration.
 ZSH=$HOME/dotfiles/zsh
 
 # Example aliases
