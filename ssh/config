@@ -3,31 +3,6 @@ Host *
     ControlMaster auto
     KeepAlive yes
     ServerAliveInterval 60
-    ForwardAgent yes
-Host union
-    User jk708
-    HostName dougal.union.ic.ac.uk
-Host dougal
-    User jk708
-    HostName dougal.union.ic.ac.uk
-    Port 10022
-Host perky
-    User jk708
-    HostName perky.su.ic.ac.uk
-Host ec2
-    User ubuntu
-    HostName 176.34.227.200
-    IdentityFile ~/.ssh/ec2_rsa
-
-Host droplet
-    User jk
-    HostName 46.101.42.15
-    ForwardAgent yes
-
-Host t-droplet
-    User root
-    HostName 104.131.197.222
-
-Host iron
-    User jk
-    HostName 192.168.0.200
+    UseRoaming no
+    # only use ForwardAgent on a host by host basis
+    # ForwardAgent yes
