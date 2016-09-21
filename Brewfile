@@ -25,6 +25,7 @@ install the_silver_searcher
 install tig
 install tmux
 install vim
+install neovim/neovim/neovim
 install watch
 install wget
 install zsh
