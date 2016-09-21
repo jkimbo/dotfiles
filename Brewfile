@@ -2,7 +2,6 @@ update
 doctor
 
 tap homebrew/dupes
-tap josegonzalez/php
 
 install ctags
 install sqlite
@@ -18,7 +17,6 @@ install mysql
 install node
 install openssl
 install phantomjs
-install php55
 install python
 install reattach-to-user-namespace
 install redis
@@ -29,5 +27,4 @@ install tmux
 install vim
 install watch
 install wget
-install yuicompressor
 install zsh

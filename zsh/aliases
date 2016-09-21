@@ -1,7 +1,7 @@
 # Aliases in this file are bash and zsh compatible
 
 # PS
-alias psg="ps aux | grep "
+alias psg="ps -aux | grep -v grep | grep "
 
 # Moving around
 alias ..='cd ..'
@@ -19,8 +19,8 @@ alias la='ls -A --group-directories-first'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vim ~/dotfiles/zsh/aliases' #alias edit
-alias ar='source ~/dotfiles/zsh/aliases'  #alias reload
+alias ae='vim ~/dotfiles/zsh/aliases' # alias edit
+alias ar='source ~/dotfiles/zsh/aliases'  # alias reload
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -28,9 +28,6 @@ alias ve='vim ~/.vimrc'
 # zsh profile editing
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
-
-# Git Aliases
-#alias git='hub'
 
 # basics
 alias gs='git status'
@@ -98,20 +95,14 @@ alias less='less -r'
 alias tf='tail -f'
 alias l='less'
 alias lh='ls -alt | head' # see the last modified files
-alias screen='TERM=screen screen'
 alias cl='clear'
 alias ps='ps aux'
 alias please='sudo'
 alias spell='aspell -a <<< '
-alias yui='java -jar ~/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar'
 alias rsync='rsync --progress -v'
 alias grunt='noglob grunt'
 alias bower='noglob bower'
 alias ag='noglob ag'
-
-# todo.txt
-export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo.sh -d ~/dotfiles/todo.cfg'
 
 # Zippin
 alias gz='tar -zcvf'
@@ -119,42 +110,17 @@ alias gz='tar -zcvf'
 alias ka9='killall -9'
 alias k9='kill -9'
 
-# tmuxinator
-alias mux='tmuxinator'
-
 # xclip
 alias copy='xclip -sel clip'
 
 # ack
 alias ack='noglob ack'
 
-# nyan cat!!
-alias nyan='telnet miku.acm.uiuc.edu'
-
-# hamster timer
-alias ham='hamster-cli'
-
 # pgrep
 alias pgrep='pgrep -lf'
-
-# pgrep
-alias pgrep='pgrep -lf'
-
-# pgrep
-alias pgrep='pgrep -lf'
-
-alias android-connect="mtpfs -o allow_other /media/Nexus7"
-alias android-disconnect="fusermount -u /media/Nexus7"
 
 # desk shell management
 alias d.='desk .'
-
-# t tasks
-#alias t='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list tasks.txt'
-#alias tf='python ~/t/t.py --task-dir ~/Dropbox/Tasks --list .tasks.txt.done'
-
-# Vim logging
-#alias vim='vim -w ~/.vimlog "$@"'
 
 # typos
 alias vm='vim'

@@ -17,4 +17,3 @@ alias -g J='| json' # json formatter: curl -s http://jsonip.com J
 # usage: fn foo 
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1* }
-
