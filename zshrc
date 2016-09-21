@@ -36,7 +36,6 @@ fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpa
 source $ZSH/oh-my-zsh.sh
 
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
-#source /etc/profile.d/autojump.zsh
 
 # Configuration
 source $HOME/dotfiles/zsh/aliases
@@ -65,21 +64,15 @@ TERM=screen-256color-bce
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Z
 [[ -s "$HOME/z/z.sh" ]] && source $HOME/z/z.sh
 
-## Ansible
-export ANSIBLE_HOSTS=~/ansible_hosts
-
 ## Add path to sudo path
 alias sudo='sudo env PATH=$PATH'
 
-# For pidgin sipe
-export NSS_SSL_CBC_RANDOM_IV=0
-
+# Virtualenv
 export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/code/virtualenvs
 export PROJECT_HOME=$HOME/code
@@ -87,12 +80,9 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pythonz/pythons/CPython-2.7.8/bin/python"
 
-#[[ -d "/usr/local/mysql" ]] && export PATH=$PATH:/usr/local/mysql/bin
-
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export PATH=$PATH:/usr/local/opt/ruby/bin
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -119,7 +109,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-fpath=($HOME/code/desk/shell_plugins/zsh $fpath)
+fpath=($HOME/dotfiles/zsh/plugins/zsh $fpath)
 
 # Android
 export ANDROID_HOME=~/Library/Android/sdk
