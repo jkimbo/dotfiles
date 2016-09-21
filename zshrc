@@ -1,12 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="jk"
-
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/oh-my-zsh"
@@ -34,6 +28,9 @@ plugins=(vi-mode git zsh-syntax-highlighting history-substring-search)
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
+
+# Setup theme
+source $HOME/dotfiles/zsh/themes/jk.zsh-theme
 
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
