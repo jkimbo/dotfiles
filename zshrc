@@ -112,3 +112,6 @@ eval `opam config env`
 export PATH=$PATH:/Applications/love.app/Contents/MacOS
 # Tiled
 export PATH=$PATH:/Applications/Tiled.app/Contents/MacOS
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -g ""'

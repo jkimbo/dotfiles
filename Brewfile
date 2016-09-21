@@ -18,6 +18,7 @@ install node
 install openssl
 install phantomjs
 install python
+install python3
 install reattach-to-user-namespace
 install redis
 install rename
