@@ -28,3 +28,4 @@ install vim
 install watch
 install wget
 install zsh
+install siege
