@@ -1,42 +1,31 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/oh-my-zsh
+ZSH=$HOME/dotfiles/zsh
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Setup theme
+ZSH_THEME='jk'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git zsh-syntax-highlighting history-substring-search)
-#plugins=(git)
+# Tmux plugin setup
+ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOSTART_ONCE="true"
+ZSH_TMUX_AUTOCONNECT="false"
+ZSH_TMUX_AUTOQUIT="false"
+
+plugins=(vi-mode git history-substring-search tmux)
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
-# Setup theme
-source $HOME/dotfiles/zsh/themes/jk.zsh-theme
-
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
 # Configuration
-source $HOME/dotfiles/zsh/aliases
-source $HOME/dotfiles/zsh/zsh_aliases
+source $ZSH/aliases
+source $ZSH/zsh_aliases
 
 __git_files () {
     _wanted files expl 'local files' _files
@@ -106,7 +95,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-fpath=($HOME/dotfiles/zsh/plugins/zsh $fpath)
+fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
 
 # Android
 export ANDROID_HOME=~/Library/Android/sdk
