@@ -4,10 +4,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'itchyny/lightline.vim'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'
