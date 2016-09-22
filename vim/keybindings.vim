@@ -14,6 +14,9 @@ nmap <Up> <C-W>+<C-W>+
 nmap <right> <C-W>><C-W>>
 nmap <left> <C-W><<C-W><
 
+""" map <Space> to :noh and clear messages
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 " Wrapped lines goes down/up to next row, rather than next line in file.
 nnoremap j gj
 nnoremap k gk
