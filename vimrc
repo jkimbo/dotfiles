@@ -81,6 +81,10 @@ set linebreak                      " wraps without <eol>
 """ Folding
 set foldcolumn=2                   " set width of folding column (appears on left side of ruler)
 
+""" Session
+au BufWinLeave * silent! mkview             " make vim save view (state) (folds, cursor, etc)
+au BufWinEnter * silent! loadview           " make vim load view (state) (folds, cursor, etc)
+
 " === Filetypes ===
 source ~/dotfiles/vim/filetypes.vim
 
