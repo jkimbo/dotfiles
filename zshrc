@@ -85,7 +85,6 @@ export NVM_DIR="/Users/jkimbo/.nvm"
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
-
 # Add postgres tools to path
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
@@ -99,10 +98,6 @@ export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${
 
 # m-cli
 export PATH=$PATH:/usr/local/m-cli
-
-# ocaml
-eval `opam config env`
-. /Users/jkimbo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # love2d
 export PATH=$PATH:/Applications/love.app/Contents/MacOS

@@ -30,7 +30,6 @@ set fileformats=unix               " always use Unix file format
 " Colour scheme
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
 
 " Highlight the 81st column 
 set textwidth=80

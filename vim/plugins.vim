@@ -1,4 +1,6 @@
 " == General editor plugins ==
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-repeat'
