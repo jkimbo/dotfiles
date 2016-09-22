@@ -84,6 +84,14 @@ set foldcolumn=2                   " set width of folding column (appears on lef
 " === Filetypes ===
 source ~/dotfiles/vim/filetypes.vim
 
+" === Spelling ===
+
+au Filetype c,css,html,tex,text,mkd,wiki,vimwiki setlocal spell
+au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " git commit messages
+au Filetype help setlocal nospell
+au StdinReadPost * setlocal nospell         " but not in man
+set spelllang=en_gb                         " spell check language to GB
+
 function! StrTrim(txt)
   return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 endfunction
@@ -140,6 +148,10 @@ let g:NERDTreeIgnore=['\.pyc','\~$', '\.swo$', '\.swp$', '\.git$', '\.hg$', '\.s
 let g:NERDTreeShowHidden=1
 let g:NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeWinSize=20
+
+" == mileszs/ack.vim ==
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap <leader>a :Ack 
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
