@@ -8,6 +8,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mileszs/ack.vim'
+Plug 'sjl/gundo.vim'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'

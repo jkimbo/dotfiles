@@ -153,5 +153,9 @@ let g:NERDTreeWinSize=20
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nnoremap <leader>a :Ack 
 
+" == sjl/gundo.vim ==
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_right = 1
+
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
