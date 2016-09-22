@@ -1,6 +1,4 @@
 " == General editor plugins ==
-Plug 'altercation/vim-colors-solarized'
-Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-repeat'
@@ -11,6 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim'
+Plug 'svermeulen/vim-easyclip'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'

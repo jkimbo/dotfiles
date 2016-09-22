@@ -28,6 +28,7 @@ set noswapfile                     " no swapfile
 set fileformats=unix               " always use Unix file format
 
 " Colour scheme
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme solarized
 
@@ -164,6 +165,10 @@ let g:gundo_right = 1
 xmap <leader>c  <Plug>Commentary
 nmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
+
+" == svermeulen/vim-easyclip ==
+set clipboard=unnamed
+nnoremap <silent> <F6> :Yanks<CR>
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
