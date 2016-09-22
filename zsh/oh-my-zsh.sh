@@ -1,5 +1,11 @@
 # Initializes Oh My Zsh
 
+# Set ZSH_CACHE_DIR to the path where cache files should be created
+# or else we will use the default cache/
+if [[ -z "$ZSH_CACHE_DIR" ]]; then
+  ZSH_CACHE_DIR="$ZSH/cache"
+fi
+
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
 for config_file ($ZSH/lib/*.zsh); do
@@ -33,8 +39,12 @@ fi
 ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 # Load and run compinit
-autoload -U compinit
-compinit -i -d "${ZSH_COMPDUMP}"
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Load all of the plugins that were defined in ~/.zshrc
 for plugin ($plugins); do
