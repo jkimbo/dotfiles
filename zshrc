@@ -16,7 +16,7 @@ ZSH_TMUX_AUTOSTART_ONCE="true"
 ZSH_TMUX_AUTOCONNECT="false"
 ZSH_TMUX_AUTOQUIT="false"
 
-plugins=(vi-mode git history-substring-search tmux)
+plugins=(vi-mode git history-substring-search tmux npm)
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
@@ -77,12 +77,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 if [ -e ~/.secrets ]; then
-    source ~/.secrets
+  source ~/.secrets
 fi
-
-### NPM
-eval "`npm completion`"
-
 
 export NVM_DIR="/Users/jkimbo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
