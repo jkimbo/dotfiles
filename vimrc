@@ -161,5 +161,10 @@ nnoremap <leader>a :Ack
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_right = 1
 
+" == tpope/vim-commentary ==
+xmap <leader>c  <Plug>Commentary
+nmap <leader>c  <Plug>Commentary
+omap <leader>c  <Plug>Commentary
+
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
