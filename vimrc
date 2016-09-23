@@ -20,6 +20,7 @@ let maplocalleader = "\\"
 
 set history=1000                   " lines of history to remember
 set undofile
+set undodir=~/.vimundo
 set hidden                         " hides buffers instead of closing them
 set number                         " set numbering rows
 au StdinReadPost * setlocal nonu   " but not in man
