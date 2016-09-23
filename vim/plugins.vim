@@ -29,3 +29,6 @@ Plug 'othree/javascript-libraries-syntax.vim'
 " == JavaScript tools integration ==
 Plug 'scrooloose/syntastic'
 Plug 'flowtype/vim-flow'
+
+" == Python tools ==
+Plug 'hynek/vim-python-pep8-indent'
