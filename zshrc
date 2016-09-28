@@ -66,7 +66,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pythonz/pythons/CPython-2.7.8/bin/python"
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export PATH=$PATH:/usr/local/opt/ruby/bin
 
@@ -80,7 +80,7 @@ if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
-export NVM_DIR="/Users/jkimbo/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc

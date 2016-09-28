@@ -1,8 +1,7 @@
-update
-doctor
+# Dependencies:
+# tap homebrew/dupes
 
-tap homebrew/dupes
-
+install coreutils
 install ctags
 install sqlite
 install ffmpeg

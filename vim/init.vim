@@ -1,1 +1,0 @@
-/Users/jkimbo/dotfiles/vimrc

@@ -103,6 +103,9 @@ endfunction
 
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " === Plugin settings ===
  if has('nvim')
   " == Shougo/deoplete.nvim ==
