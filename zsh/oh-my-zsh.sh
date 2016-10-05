@@ -41,9 +41,9 @@ ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 # Load and run compinit
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
+  compinit -u
 else
-  compinit -C
+  compinit -uC
 fi
 
 # Load all of the plugins that were defined in ~/.zshrc
