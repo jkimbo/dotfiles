@@ -156,6 +156,8 @@ let g:NERDTreeIgnore=['\.pyc','\~$', '\.swo$', '\.swp$', '\.git$', '\.hg$', '\.s
 let g:NERDTreeShowHidden=1
 let g:NERDTreeKeepTreeInNewTab=1
 let g:NERDTreeWinSize=20
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " == mileszs/ack.vim ==
 let g:ackprg = 'ag --nogroup --nocolor --column'
