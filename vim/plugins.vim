@@ -10,6 +10,7 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim'
 Plug 'svermeulen/vim-easyclip'
+Plug 'editorconfig/editorconfig-vim'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'
@@ -21,8 +22,7 @@ if has('nvim')
 endif
 
 " == JavaScript syntax highlighting ==
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 

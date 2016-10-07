@@ -64,9 +64,9 @@ if has('statusline')
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
-set tabstop=4                      " spaces per tab
-set softtabstop=4
-set shiftwidth=4                   " spaces per indent
+set tabstop=2                      " spaces per tab
+set softtabstop=2
+set shiftwidth=2                   " spaces per indent
 set expandtab                      " expand tabs to spaces
 set smarttab                       " at start shiftwidth, else tabstop
 set autoindent                     " indent new line to same as previous
@@ -175,6 +175,16 @@ omap <leader>c  <Plug>Commentary
 " == svermeulen/vim-easyclip ==
 set clipboard=unnamed
 nnoremap <silent> <F6> :Yanks<CR>
+
+" == pangloss/vim-javascript ==
+let g:javascript_plugin_flow = 1
+let g:javascript_plugin_jsdoc = 1
+
+" == othree/javascript-libraries-syntax ==
+let g:used_javascript_libs = 'underscore,react,chai'
+
+" == editorconfig/editorconfig-vim ==
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
