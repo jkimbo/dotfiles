@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # vimdiff "$2" "$5"
-nvim -d "$2" "$5"
+nvim --cmd "set viewdir=~/.local/share/nvim/view-diff" -d "$2" "$5"
