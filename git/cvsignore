@@ -83,3 +83,7 @@ vendor/
 # gonzo release cache #
 ######################
 release_cache/
+
+# Node modules #
+###############
+node_modules/
