@@ -136,6 +136,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
+  let g:flow#enable = 0
 endif
 
 " == junegunn/fzf ==
