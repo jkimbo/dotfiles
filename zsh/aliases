@@ -1,5 +1,8 @@
 # Aliases in this file are bash and zsh compatible
 
+## Add path to sudo path
+alias sudo='sudo env PATH=$PATH'
+
 # PS
 alias psg="ps -aux | grep -v grep | grep "
 

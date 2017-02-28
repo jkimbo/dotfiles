@@ -10,10 +10,3 @@ alias -g S='| sort'
 alias -g G='| grep' # now you can do: ls foo G something
 alias -g V='| pager' # now you can do: echo 'hello' V
 alias -g J='| json' # json formatter: curl -s http://jsonip.com J
-
-# Functions
-#
-# (f)ind by (n)ame
-# usage: fn foo 
-# to find all files containing 'foo' in the name
-function fn() { ls **/*$1* }

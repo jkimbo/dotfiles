@@ -1,14 +1,15 @@
 # Path to your zsh configuration.
 ZSH=$HOME/dotfiles/zsh
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-
 # Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 # Setup theme
 ZSH_THEME='jk'
+
+TERM=screen-256color-bce
+#TERM=xterm-256colors
+#TERM=xterm+256colors
 
 # Tmux plugin setup
 ZSH_TMUX_AUTOSTART="true"
@@ -16,17 +17,25 @@ ZSH_TMUX_AUTOSTART_ONCE="true"
 ZSH_TMUX_AUTOCONNECT="false"
 ZSH_TMUX_AUTOQUIT="false"
 
+export EDITOR="nvim"
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+# Edit line in vim mode with `e` key
+bindkey -M vicmd e edit-command-line
+
 plugins=(vi-mode git history-substring-search tmux npm)
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
-[[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
-
 # Configuration
 source $ZSH/aliases
 source $ZSH/zsh_aliases
 
+# TODO What is this?
 __git_files () {
     _wanted files expl 'local files' _files
 }
@@ -39,24 +48,15 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # Customize to your needs...
 export PATH=$HOME/bin:$HOME/.bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/Dropbox/bin
 
-export EDITOR="vim"
-
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-TERM=screen-256color-bce
-#TERM=xterm-256colors
-#TERM=xterm+256colors
-
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# Z
-[[ -s "$HOME/z/z.sh" ]] && source $HOME/z/z.sh
-
-## Add path to sudo path
-alias sudo='sudo env PATH=$PATH'
+# Ruby
+export PATH=$PATH:/usr/local/opt/ruby/bin
 
 # Virtualenv
 export VIRTUALENV_DISTRIBUTE=true
@@ -67,14 +67,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pythonz/pythons/CPython-2.7.8/bin/python"
 
 # export JAVA_HOME="$(/usr/libexec/java_home)"
-
-export PATH=$PATH:/usr/local/opt/ruby/bin
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### Add composer to path
-export PATH=$HOME/.composer/vendor/bin:$PATH
 
 if [ -e ~/.secrets ]; then
   source ~/.secrets
@@ -98,11 +90,6 @@ export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${
 
 # m-cli
 export PATH=$PATH:/usr/local/m-cli
-
-# love2d
-export PATH=$PATH:/Applications/love.app/Contents/MacOS
-# Tiled
-export PATH=$PATH:/Applications/Tiled.app/Contents/MacOS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
