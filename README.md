@@ -1,4 +1,15 @@
-# My dotfile
+# My dotfiles
+
+## Installation
+
+* Install [homebrew](https://brew.sh/)
+* Install [homebrew bundle](https://github.com/Homebrew/homebrew-bundle): `brew tap Homebrew/bundle`
+* Install apps in `Brewfile`: `brew bundle`
+* Add `/usr/local/bin/zsh` to `/etc/shells/`
+* `chsh -s /usr/local/bin/zsh # change default shell to zsh`
+* Symlink zsh config: `cd ~/ && ln -s dotfiles/zshrc .zshrc`
+* Symlink tmux config: `ln -s dotfiles/tmux.conf .tmux.conf`
+* Start iTerm
 
 
 ## Vim/Neovim setup
@@ -9,7 +20,6 @@ Configuration:
 
 ```bash
 ln -s ~/dotfiles/vim ~/.config/nvim
-ln -s ~/dotfiles/vimrc ~/.config/nvim/init.vim
 ```
 
 Install plugins:
@@ -17,3 +27,5 @@ Install plugins:
 ```
 nvim +PlugInstall
 ```
+
+Follow this comment to get navigation keys to work properly: https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
