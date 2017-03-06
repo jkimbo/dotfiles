@@ -62,9 +62,9 @@ export PATH=$PATH:/usr/local/opt/ruby/bin
 export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/code/virtualenvs
 export PROJECT_HOME=$HOME/code
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pythonz/pythons/CPython-2.7.8/bin/python"
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pyenv/shims/python"
 
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 
@@ -78,7 +78,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # Add postgres tools to path
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
@@ -93,6 +93,9 @@ export PATH=$PATH:/usr/local/m-cli
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# pyenv
+eval "$(pyenv init -)"
 
 # Local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
