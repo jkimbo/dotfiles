@@ -1,3 +1,6 @@
+" Remap two semicolons to the escape key
+imap ;; <Esc>
+
 """ Smart way to move windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
