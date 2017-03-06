@@ -85,8 +85,9 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
 
 # Android
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # m-cli
 export PATH=$PATH:/usr/local/m-cli
