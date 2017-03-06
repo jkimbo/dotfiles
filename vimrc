@@ -133,6 +133,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
   let g:syntastic_jsx_checkers=['eslint']
   let g:syntastic_jsx_eslint_exec = 'eslint_d'
   let g:syntastic_python_flake8_exec = '/Users/jkimbo/bin/flake8.sh'
+  let g:syntastic_javascript_jsx_checkers=['eslint']
+  let g:syntastic_javascript_jsx_eslint_exec='eslint_d'
 
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
@@ -141,6 +143,7 @@ endif
 
 " == junegunn/fzf ==
 nnoremap <leader>t :FZF<CR> 
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " == mxw/vim-jsx ==
 let g:jsx_ext_required = 0
