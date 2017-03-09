@@ -19,6 +19,8 @@ if has('nvim')
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'steelsojka/deoplete-flow'
   Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
 endif
 
 " == JavaScript syntax highlighting ==

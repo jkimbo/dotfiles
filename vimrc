@@ -125,6 +125,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
                               \ 'active_filetypes': [],
                               \ 'passive_filetypes': ['less', 'phtml', 'html'] }
   let g:syntastic_python_checkers=['python', 'flake8']
+  " let g:syntastic_python_flake8_exec = '/Users/jkimbo/bin/flake8.sh'
   let g:syntastic_scss_checkers=['sass', 'scss_lint']
   let g:syntastic_css_checkers=['stylelint']
   let g:syntastic_php_checkers=['php']
@@ -132,13 +133,15 @@ let g:python3_host_prog = '/usr/local/bin/python3'
   let g:syntastic_javascript_eslint_exec = 'eslint_d'
   let g:syntastic_jsx_checkers=['eslint']
   let g:syntastic_jsx_eslint_exec = 'eslint_d'
-  let g:syntastic_python_flake8_exec = '/Users/jkimbo/bin/flake8.sh'
   let g:syntastic_javascript_jsx_checkers=['eslint']
   let g:syntastic_javascript_jsx_eslint_exec='eslint_d'
 
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
   let g:flow#enable = 0
+
+  " == Shougo/neosnippet ==
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 endif
 
 " == junegunn/fzf ==
