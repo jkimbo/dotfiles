@@ -29,3 +29,11 @@ nvim +PlugInstall
 ```
 
 Follow this comment to get navigation keys to work properly: https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+
+## Sensible macOS defaults
+
+When setting up a new Mac, you may want to set some sensible macOS defaults:
+
+```bash
+source ./macos
+```
