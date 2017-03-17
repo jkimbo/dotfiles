@@ -10,6 +10,12 @@ au BufRead,BufNewFile gitconfig     setlocal filetype=gitconfig     " gitconfig 
 au BufRead,BufNewFile *.twig        setlocal filetype=html          " twig
 au BufRead,BufNewFile *.json        setlocal syntax=json
 
+" === Markdown ===
+au Filetype html,xml call SetMarkdownOptions()
+function SetMarkdownOptions()
+  setlocal spell
+endfunction
+
 " === HTML/XML ===
 au Filetype html,xml call SetHTMLOptions()
 function SetHTMLOptions()
