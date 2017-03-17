@@ -1,50 +1,42 @@
 [user]
-    name = Jonathan Kim 
+  name = Jonathan Kim 
 	email = jkimbo@gmail.com
 [include]
-    # For username / creds / etc
-    path = ~/.gitconfig.local
+  # For username / creds / etc
+  path = ~/.gitconfig.local
 [core]
-    excludesfile = ~/dotfiles/git/cvsignore
-    autocrlf = off
-    safecrlf = warn
-    editor = nvim
+  excludesfile = ~/dotfiles/git/cvsignore
+  autocrlf = off
+  safecrlf = warn
+  editor = nvim
 [diff]
-    external = ~/dotfiles/bin/git_diff_wrapper
+  external = ~/dotfiles/bin/git_diff_wrapper
 [pager]
-    diff =
+  diff =
 [push]
-    default = matching
+  default = matching
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool "vimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J' -c 'set viewdir=~/.local/share/nvim/view-diff'
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J' -c 'set viewdir=~/.local/share/nvim/view-diff'
 [alias]
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p 
-    rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
-    stats = !/home/jkimbo/dotfiles/bin/git-stats
-    tree = log --graph --pretty=oneline --abbrev-commit --all
-    switch = !legit switch \"$@\"
-    branches = !legit branches
-    sprout = !legit sprout \"$@\"
-    unpublish = !legit unpublish \"$@\"
-    harvest = !legit harvest \"$@\"
-    sync = !legit sync \"$@\"
-    publish = !legit publish \"$@\"
-    graft = !legit graft \"$@\"
-    assume   = update-index --assume-unchanged
-    unassume = update-index --no-assume-unchanged
-    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
-    recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' | column -t -s ':' | head -n30"
-    delete-merged = "!f() { set -x; BASE_BRANCH=${1:-master}; git branch --merged $BASE_BRANCH | grep -v \"\\* $BASE_BRANCH\" | xargs -n 1 git branch -d; }; f"
-	today = log --since=midnight --author='Jonathan Kim' --oneline
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  rank-contributers = !/home/jkimbo/dotfiles/bin/git-rank-contributers
+  stats = !/home/jkimbo/dotfiles/bin/git-stats
+  tree = log --graph --pretty=oneline --abbrev-commit --all
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+  recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' | column -t -s ':' | head -n30"
+  delete-merged = "!f() { set -x; BASE_BRANCH=${1:-master}; git branch --merged $BASE_BRANCH | grep -v \"\\* $BASE_BRANCH\" | xargs -n 1 git branch -d; }; f"
+  today = log --since=midnight --author='Jonathan Kim' --oneline
 [http]
     sslVerify = false
 [credential]
@@ -55,4 +47,4 @@
 [http]
 	sslVerify = false
 [format]
-    pretty = oneline
+  pretty = oneline
