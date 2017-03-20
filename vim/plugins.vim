@@ -16,7 +16,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'steelsojka/deoplete-flow'
   Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }
   Plug 'Shougo/neosnippet'
