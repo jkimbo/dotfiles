@@ -12,10 +12,17 @@ Plug 'sjl/gundo.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'editorconfig/editorconfig-vim'
 
-" YouCompleteMe
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+" == Autocomplete plugins ==
+Plug 'ervandew/supertab'
+if has('nvim')		
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }		
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }		
+  Plug 'steelsojka/deoplete-flow'		
+  Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }		
+  Plug 'Shougo/neosnippet'		
+  Plug 'Shougo/neosnippet-snippets'		
+endif
 
-Plug 'SirVer/ultisnips'
 " == JavaScript syntax highlighting ==
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'

@@ -104,12 +104,20 @@ endfunction
 
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 
-" == Valloric/YouCompleteMe ==
-let g:ycm_server_python_interpreter = '/Users/jk/.pyenv/versions/2.7.13/bin/python'
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " === Plugin settings ===
  if has('nvim')
   set completeopt-=preview
+
+  let g:deoplete#enable_at_startup = 1
+  let g:SuperTabDefaultCompletionType = "<c-n>"
+  let g:deoplete#sources#flow#flow_bin = g:flow_path
+  let g:tern_request_timeout = 1
+  let g:tern_show_signature_in_pum = 0
+
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
   " == scrooloose/syntastic ==
   let g:syntastic_auto_loc_list=1
@@ -133,11 +141,6 @@ let g:ycm_server_python_interpreter = '/Users/jk/.pyenv/versions/2.7.13/bin/pyth
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
   let g:flow#enable = 0
-
-  " == SirVer/ultisnips ==
-  let g:UltiSnipsExpandTrigger="<c-k>"
-  let g:UltiSnipsSnippetDirectories=$HOME.'/dotfiles/vim/snippets'
-  inoremap <c-k> <c-x><c-k>
 endif
 
 " == junegunn/fzf ==
