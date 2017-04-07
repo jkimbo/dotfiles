@@ -52,6 +52,7 @@ set showtabline=1                                           " standard tabbed vi
 set viminfo='100                                            " save marks and jumps in viminfo
 set whichwrap=b,s,>,<                                       " which movement chars move lines
 set winminheight=0                                          " window minimum height is 0
+set lazyredraw                                              " fixes scrolling slowness
 
 if has('statusline')
   set laststatus=2

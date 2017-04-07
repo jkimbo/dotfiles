@@ -19,11 +19,12 @@ Plug 'SirVer/ultisnips'
 " == JavaScript syntax highlighting ==
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 
 " == JavaScript tools integration ==
 Plug 'scrooloose/syntastic'
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
+" Plug 'fleischie/vim-styled-components'
 
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'
