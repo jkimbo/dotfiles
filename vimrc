@@ -54,6 +54,7 @@ set whichwrap=b,s,>,<                                       " which movement cha
 set winminheight=0                                          " window minimum height is 0
 " set showmatch                                               " highlight matching [{()}]
 set lazyredraw                                              " fixes scrolling slowness
+set ttimeoutlen=2
 
 if has('statusline')
   set laststatus=2

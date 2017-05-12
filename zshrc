@@ -7,7 +7,8 @@ DISABLE_AUTO_TITLE="true"
 # Setup theme
 ZSH_THEME='jk'
 
-TERM=screen-256color-bce
+TERM=xterm-256color
+#TERM=screen-256color-bce
 #TERM=xterm-256colors
 #TERM=xterm+256colors
 
@@ -34,6 +35,15 @@ source $ZSH/oh-my-zsh.sh
 # Configuration
 source $ZSH/aliases
 source $ZSH/zsh_aliases
+
+# turn off ZLE bracketed paste in dumb term
+# otherwise turn on ZLE bracketed-paste-magic
+if [[ $TERM == dumb ]]; then
+  unset zle_bracketed_paste
+else
+  autoload -Uz bracketed-paste-magic
+  zle -N bracketed-paste bracketed-paste-magic
+fi
 
 # TODO What is this?
 __git_files () {
