@@ -14,7 +14,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sbdchd/neoformat'
 
 " == Autocomplete plugins ==
-Plug 'ervandew/supertab'
 if has('nvim')		
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }		
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }		

@@ -16,7 +16,7 @@ syntax enable
 
 let mapleader = ','
 let g:mapleader = ","
-let maplocalleader = "\\"
+" let maplocalleader = "\\"
 
 set history=1000                   " lines of history to remember
 set undofile
@@ -107,19 +107,22 @@ endfunction
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 let g:prettier_path = StrTrim(system('PATH=$(npm bin):$PATH && which prettier'))
 
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = $HOME.'/.pyenv/versions/2.7.13/bin/python'
+let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
 
 " === Plugin settings ===
  if has('nvim')
   set completeopt-=preview
 
   let g:deoplete#enable_at_startup = 1
-  let g:SuperTabDefaultCompletionType = "<c-n>"
   let g:deoplete#sources#flow#flow_bin = g:flow_path
+  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+  " vim tern
   let g:tern_request_timeout = 1
   let g:tern_show_signature_in_pum = 0
 
+  " neosnippet complete
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
   " == scrooloose/syntastic ==
@@ -193,6 +196,8 @@ omap <leader>c  <Plug>Commentary
 " == svermeulen/vim-easyclip ==
 set clipboard=unnamed
 nnoremap <silent> <F6> :Yanks<CR>
+" Allow seting marks with gm
+nnoremap gm m
 
 " == pangloss/vim-javascript ==
 let g:javascript_plugin_flow = 1
