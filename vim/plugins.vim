@@ -15,21 +15,22 @@ Plug 'sbdchd/neoformat'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  Plug 'steelsojka/deoplete-flow'
-  Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+if has('nvim')		
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }		
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }		
+  Plug 'steelsojka/deoplete-flow'		
+  Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }		
+  Plug 'Shougo/neosnippet'		
+  Plug 'Shougo/neosnippet-snippets'		
 endif
 
 " == JavaScript syntax highlighting ==
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'jparise/vim-graphql'
 " Plug 'leafgarland/typescript-vim'
+
 
 " == JavaScript tools integration ==
 Plug 'scrooloose/syntastic'

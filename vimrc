@@ -52,7 +52,8 @@ set showtabline=1                                           " standard tabbed vi
 set viminfo='100                                            " save marks and jumps in viminfo
 set whichwrap=b,s,>,<                                       " which movement chars move lines
 set winminheight=0                                          " window minimum height is 0
-set showmatch           									" highlight matching [{()}]
+set showmatch                                               " highlight matching [{()}]
+set lazyredraw                                              " fixes scrolling slowness
 
 if has('statusline')
   set laststatus=2
@@ -109,14 +110,15 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " === Plugin settings ===
  if has('nvim')
-  " == Shougo/deoplete.nvim ==
-  " == carlitux/deoplete-ternjs ==
+  set completeopt-=preview
+
   let g:deoplete#enable_at_startup = 1
   let g:SuperTabDefaultCompletionType = "<c-n>"
   let g:deoplete#sources#flow#flow_bin = g:flow_path
   let g:tern_request_timeout = 1
   let g:tern_show_signature_in_pum = 0
-  set completeopt-=preview
+
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
   " == scrooloose/syntastic ==
   let g:syntastic_auto_loc_list=1
@@ -140,9 +142,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
   let g:flow#enable = 0
-
-  " == Shougo/neosnippet ==
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 endif
 
 " == junegunn/fzf ==

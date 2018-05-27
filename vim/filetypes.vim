@@ -68,6 +68,7 @@ function SetJSOptions()
   setlocal spell
   setlocal textwidth=80
   setlocal colorcolumn=+1
+  " setlocal omnifunc=javascriptcomplete#CompleteJS
 endfunction
 
 " === Python ===
