@@ -11,6 +11,7 @@ Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sbdchd/neoformat'
 
 " == Autocomplete plugins ==
 Plug 'ervandew/supertab'
@@ -27,10 +28,12 @@ endif
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'jparise/vim-graphql'
+" Plug 'leafgarland/typescript-vim'
 
 " == JavaScript tools integration ==
 Plug 'scrooloose/syntastic'
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
 
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'

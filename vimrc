@@ -187,6 +187,12 @@ nnoremap <silent> <F6> :Yanks<CR>
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
+" == sbdchd/neoformat ==
+nnoremap <F3> :Neoformat<CR>
+ autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
+
 " == othree/javascript-libraries-syntax ==
 let g:used_javascript_libs = 'underscore,react,chai'
 
