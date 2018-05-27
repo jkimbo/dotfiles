@@ -1,3 +1,5 @@
+filetype indent on      " load filetype-specific indent files
+
 " Mark certain extension as specific filetypes
 au BufRead,BufNewFile *.txt         setfiletype text
 au BufRead,BufNewFile *.csv,*.tsv   setfiletype csv

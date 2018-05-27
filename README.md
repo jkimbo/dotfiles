@@ -37,3 +37,9 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 ```bash
 source ./macos
 ```
+
+## Useful commands
+
+### Vim
+
+`:CheckHelth`: Checks neovim health
