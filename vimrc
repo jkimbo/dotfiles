@@ -52,7 +52,7 @@ set showtabline=1                                           " standard tabbed vi
 set viminfo='100                                            " save marks and jumps in viminfo
 set whichwrap=b,s,>,<                                       " which movement chars move lines
 set winminheight=0                                          " window minimum height is 0
-set showmatch                                               " highlight matching [{()}]
+" set showmatch                                               " highlight matching [{()}]
 set lazyredraw                                              " fixes scrolling slowness
 
 if has('statusline')
@@ -104,6 +104,7 @@ function! StrTrim(txt)
 endfunction
 
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+let g:prettier_path = StrTrim(system('PATH=$(npm bin):$PATH && which prettier'))
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -142,6 +143,15 @@ let g:python3_host_prog = '/usr/local/bin/python3'
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
   let g:flow#enable = 0
+
+  " == neoformat ==
+  let g:neoformat_enabled_javascript = ['prettier']
+  let g:neoformat_javascript_prettier = {
+            \ 'exe': g:prettier_path,
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+            \ 'stdin': 1,
+            \ }
+
 endif
 
 " == junegunn/fzf ==
@@ -189,7 +199,7 @@ let g:javascript_plugin_jsdoc = 1
 
 " == sbdchd/neoformat ==
 nnoremap <F3> :Neoformat<CR>
- autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
+" autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
 
