@@ -152,12 +152,12 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
   let g:flow#flowpath = g:flow_path
 
   " == neoformat ==
-  " let g:neoformat_enabled_javascript = ['prettier']
-  " let g:neoformat_javascript_prettier = {
-            " \ 'exe': g:prettier_path,
-            " \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-            " \ 'stdin': 1,
-            " \ }
+  let g:neoformat_enabled_javascript = ['prettier']
+  let g:neoformat_javascript_prettier = {
+            \ 'exe': g:prettier_path,
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+            \ 'stdin': 1,
+            \ }
 
 endif
 
@@ -207,10 +207,10 @@ let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
 " == sbdchd/neoformat ==
-" nnoremap <F3> :Neoformat<CR>
+nnoremap <F3> :Neoformat<CR>
 " autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
 " Use formatprg when available
-" let g:neoformat_try_formatprg = 1
+let g:neoformat_try_formatprg = 1
 
 " == othree/javascript-libraries-syntax ==
 let g:used_javascript_libs = 'underscore,react,chai'
