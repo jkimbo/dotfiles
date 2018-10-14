@@ -108,5 +108,7 @@ export PATH=$PATH:/usr/local/m-cli
 # pyenv
 eval "$(pyenv init -)"
 
+export REACT_EDITOR=code
+
 # Local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

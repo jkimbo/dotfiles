@@ -1,6 +1,6 @@
 [user]
-  name = Jonathan Kim 
-	email = jkimbo@gmail.com
+  name = Jonathan Kim
+  email = jkimbo@gmail.com
 [include]
   # For username / creds / etc
   path = ~/.gitconfig.local
@@ -9,6 +9,7 @@
   autocrlf = off
   safecrlf = warn
   editor = nvim
+  ignorecase = false
 [diff]
   external = ~/dotfiles/bin/git_diff_wrapper
 [pager]
@@ -37,14 +38,17 @@
   recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' | column -t -s ':' | head -n30"
   delete-merged = "!f() { set -x; BASE_BRANCH=${1:-master}; git branch --merged $BASE_BRANCH | grep -v \"\\* $BASE_BRANCH\" | xargs -n 1 git branch -d; }; f"
   today = log --since=midnight --author='Jonathan Kim' --oneline
+  versions = tag --sort=v:refname
 [http]
-    sslVerify = false
+  sslVerify = false
 [credential]
 [color]
-	ui = 1
+  ui = 1
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [http]
-	sslVerify = false
+  sslVerify = false
 [format]
   pretty = oneline
+[tag]
+  sort = version:refname

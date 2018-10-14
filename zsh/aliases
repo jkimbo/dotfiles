@@ -156,5 +156,11 @@ x() { echo $1 | copy }
 function server() {
     local port="${1:-8000}"
     open "http://localhost:${port}/"
-    python -m SimpleHTTPServer "$port"
+    # detect python version
+    python_version="$(python -c 'import sys; print(sys.version_info[0])')"
+    if [ $python_version == "2" ]; then
+      python -m SimpleHTTPServer "$port"
+    else
+      python -m http.server "$port"
+    fi
 }

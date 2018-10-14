@@ -50,6 +50,9 @@ function SetSHOptions()
   setlocal foldlevelstart=2
   setlocal foldminlines=1
   setlocal foldnestmax=20
+  setlocal list                    " show tabs and trailing spaces
+  setlocal lcs=tab:├─              " Tabs are shown as ├──├──
+  setlocal lcs+=trail:␣            " Show trailing spaces as ␣
 endfunction
 
 " === JS ===
