@@ -218,5 +218,7 @@ let g:used_javascript_libs = 'underscore,react,chai'
 " == editorconfig/editorconfig-vim ==
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+let g:vim_isort_python_version = 'python3'
+
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
