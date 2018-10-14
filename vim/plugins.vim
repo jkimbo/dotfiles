@@ -37,3 +37,6 @@ Plug 'scrooloose/syntastic'
 
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'
+
+" == Prettier ==
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }

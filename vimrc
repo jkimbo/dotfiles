@@ -106,6 +106,7 @@ endfunction
 
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 let g:prettier_path = StrTrim(system('PATH=$(npm bin):$PATH && which prettier'))
+let g:eslint_path = StrTrim(system('PATH=$(npm bin):$PATH && which eslint'))
 
 let g:python_host_prog = $HOME.'/.pyenv/versions/2.7.13/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
@@ -137,24 +138,26 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
   let g:syntastic_scss_checkers=['sass', 'scss_lint']
   let g:syntastic_css_checkers=['stylelint']
   let g:syntastic_php_checkers=['php']
-  let g:syntastic_javascript_checkers=['eslint']
-  let g:syntastic_javascript_eslint_exec = 'eslint_d'
+  let g:syntastic_javascript_checkers=['eslint', 'flow']
+  let g:syntastic_javascript_eslint_exec = g:eslint_path
+  let g:syntastic_javascript_flow_exec = g:flow_path
   let g:syntastic_jsx_checkers=['eslint']
-  let g:syntastic_jsx_eslint_exec = 'eslint_d'
+  let g:syntastic_jsx_eslint_exec = g:eslint_path
   let g:syntastic_javascript_jsx_checkers=['eslint']
-  let g:syntastic_javascript_jsx_eslint_exec='eslint_d'
+  let g:syntastic_javascript_jsx_eslint_exec = g:eslint_path
 
   " == flowtype/vim-flow ==
   let g:flow#autoclose = 1
-  let g:flow#enable = 0
+  let g:flow#enable = 1
+  let g:flow#flowpath = g:flow_path
 
   " == neoformat ==
-  let g:neoformat_enabled_javascript = ['prettier']
-  let g:neoformat_javascript_prettier = {
-            \ 'exe': g:prettier_path,
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-            \ 'stdin': 1,
-            \ }
+  " let g:neoformat_enabled_javascript = ['prettier']
+  " let g:neoformat_javascript_prettier = {
+            " \ 'exe': g:prettier_path,
+            " \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+            " \ 'stdin': 1,
+            " \ }
 
 endif
 
@@ -204,10 +207,10 @@ let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
 " == sbdchd/neoformat ==
-nnoremap <F3> :Neoformat<CR>
+" nnoremap <F3> :Neoformat<CR>
 " autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
 " Use formatprg when available
-let g:neoformat_try_formatprg = 1
+" let g:neoformat_try_formatprg = 1
 
 " == othree/javascript-libraries-syntax ==
 let g:used_javascript_libs = 'underscore,react,chai'

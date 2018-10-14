@@ -37,3 +37,5 @@ inoremap <F12> <C-o>:syntax sync fromstart<CR>      " fix syntax highlighting pr
 
 " Copy to system clipboard
 vnoremap <leader>y "*y
+
+nmap <F3> :Prettier<CR>

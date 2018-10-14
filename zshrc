@@ -1,5 +1,6 @@
 # Path to your zsh configuration.
 ZSH=$HOME/dotfiles/zsh
+ZSH_CUSTOM=$HOME/dotfiles/zsh
 
 # Uncomment following line if you want to disable autosetting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -7,7 +8,8 @@ DISABLE_AUTO_TITLE="true"
 # Setup theme
 ZSH_THEME='jk'
 
-TERM=xterm-256color
+TERM=screen-256color
+#TERM=xterm-256color
 #TERM=screen-256color-bce
 #TERM=xterm-256colors
 #TERM=xterm+256colors
@@ -27,7 +29,7 @@ zle -N edit-command-line
 # Edit line in vim mode with `e` key
 bindkey -M vicmd e edit-command-line
 
-plugins=(vi-mode git history-substring-search tmux npm)
+plugins=(vi-mode git history-substring-search tmux npm yarn-autocompletions)
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
@@ -36,14 +38,18 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH/aliases
 source $ZSH/zsh_aliases
 
+# Load some zsh plugins
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # turn off ZLE bracketed paste in dumb term
 # otherwise turn on ZLE bracketed-paste-magic
-if [[ $TERM == dumb ]]; then
-  unset zle_bracketed_paste
-else
-  autoload -Uz bracketed-paste-magic
-  zle -N bracketed-paste bracketed-paste-magic
-fi
+# if [[ $TERM == dumb ]]; then
+#   unset zle_bracketed_paste
+# else
+#   autoload -Uz bracketed-paste-magic
+#   zle -N bracketed-paste bracketed-paste-magic
+# fi
 
 # TODO What is this?
 __git_files () {
