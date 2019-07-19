@@ -13,6 +13,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sbdchd/neoformat'
 Plug 'airblade/vim-rooter'
+Plug 'mhinz/vim-startify'
 
 " == Autocomplete plugins ==
 if has('nvim')		
