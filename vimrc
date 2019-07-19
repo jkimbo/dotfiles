@@ -217,5 +217,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 let g:vim_isort_python_version = 'python3'
 
+" == airblade/vim-rooter ==
+let g:rooter_patterns = ['package.json', 'manage.py', '.git/']
+
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim

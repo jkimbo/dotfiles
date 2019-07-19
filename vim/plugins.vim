@@ -12,6 +12,7 @@ Plug 'sjl/gundo.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sbdchd/neoformat'
+Plug 'airblade/vim-rooter'
 
 " == Autocomplete plugins ==
 if has('nvim')		
