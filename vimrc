@@ -207,7 +207,7 @@ let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
 " == sbdchd/neoformat ==
-nnoremap <F3> :Neoformat<CR>
+nnoremap <F3> :mkview<CR>:Neoformat<CR>:loadview<CR>
 " autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
