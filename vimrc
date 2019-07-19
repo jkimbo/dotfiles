@@ -212,9 +212,6 @@ nnoremap <F3> :mkview<CR>:Neoformat<CR>:loadview<CR>
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
 
-" == othree/javascript-libraries-syntax ==
-let g:used_javascript_libs = 'underscore,react,chai'
-
 " == editorconfig/editorconfig-vim ==
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 

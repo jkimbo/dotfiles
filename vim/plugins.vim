@@ -26,14 +26,12 @@ endif
 " == JavaScript syntax highlighting ==
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-" Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'jparise/vim-graphql'
 " Plug 'leafgarland/typescript-vim'
 
 
 " == JavaScript tools integration ==
 Plug 'scrooloose/syntastic'
-" Plug 'flowtype/vim-flow'
 
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'
