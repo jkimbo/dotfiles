@@ -41,3 +41,6 @@ Plug 'fisadev/vim-isort'
 
 " == Prettier ==
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" == Black ==
+Plug 'python/black'

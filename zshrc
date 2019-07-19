@@ -97,8 +97,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Hook for desk activation
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
+# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+# fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
+# fpath=(/path/to/desk/repo/shell_plugins/zsh $fpath)
 
 # Android
 export ANDROID_HOME=${HOME}/Library/Android/sdk
