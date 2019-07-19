@@ -8,7 +8,7 @@
   excludesfile = ~/dotfiles/git/cvsignore
   autocrlf = off
   safecrlf = warn
-  editor = nvim
+  editor = 'nvim'
   ignorecase = false
 [diff]
   external = ~/dotfiles/bin/git_diff_wrapper
@@ -35,10 +35,11 @@
   assume   = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
   assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
-  recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' | column -t -s ':' | head -n30"
+  recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short):%(committerdate:relative)' | column -t -s ':' | head -n15"
   delete-merged = "!f() { set -x; BASE_BRANCH=${1:-master}; git branch --merged $BASE_BRANCH | grep -v \"\\* $BASE_BRANCH\" | xargs -n 1 git branch -d; }; f"
   today = log --since=midnight --author='Jonathan Kim' --oneline
   versions = tag --sort=v:refname
+  fetch-pr  = "!f() { git fetch origin refs/pull/$1/head:pr/$1; } ; f"
 [http]
   sslVerify = false
 [credential]
@@ -52,3 +53,5 @@
   pretty = oneline
 [tag]
   sort = version:refname
+[hub]
+  protocol = ssh
