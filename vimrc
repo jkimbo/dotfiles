@@ -59,12 +59,25 @@ set ttimeoutlen=2
 if has('statusline')
   set laststatus=2
 
+  function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? '👌' : printf(
+    \   '%d⚠️  %d⛔️',
+    \   all_non_errors,
+    \   all_errors
+    \)
+  endfunction
+
   " Broken down into easily includeable segments
   set statusline=%<%f\    " Filename
   set statusline+=%{fugitive#statusline()} "  Git Hotness
   set statusline+=\ [%{&ff}/%Y]            " filetype
   set statusline+=\ %w%h%m%r\ " Options
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+  set statusline+=%=%{LinterStatus()}\ %-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
 set tabstop=2                      " spaces per tab
@@ -219,6 +232,18 @@ let g:vim_isort_python_version = 'python3'
 
 " == airblade/vim-rooter ==
 let g:rooter_patterns = ['package.json', 'manage.py', '.git/']
+
+" == w0rp/ale ==
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'python': ['flake8'],
+\}
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+" nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim

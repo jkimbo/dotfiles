@@ -23,6 +23,7 @@ if has('nvim')
   Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }		
   Plug 'Shougo/neosnippet'		
   Plug 'Shougo/neosnippet-snippets'		
+  Plug 'w0rp/ale'
 endif
 
 " == JavaScript syntax highlighting ==
@@ -33,7 +34,7 @@ Plug 'jparise/vim-graphql'
 
 
 " == JavaScript tools integration ==
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'
