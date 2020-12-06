@@ -10,12 +10,6 @@ export ZSH=$HOME/dotfiles/zsh
 # Setup theme
 ZSH_THEME='jk'
 
-#TERM=screen-256color
-#TERM=xterm-256color
-#TERM=screen-256color-bce
-#TERM=xterm-256colors
-#TERM=xterm+256colors
-
 # Tmux plugin setup
 # ZSH_TMUX_AUTOSTART="true"
 # ZSH_TMUX_AUTOSTART_ONCE="true"
@@ -38,9 +32,6 @@ bindkey -M vicmd e edit-command-line
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# plugins=(vi-mode git history-substring-search tmux npm yarn-autocompletions)
-# fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
-
 source $ZSH/oh-my-zsh.sh
 
 # Configuration
@@ -50,15 +41,6 @@ source $HOME/dotfiles/zsh_aliases
 # Load some zsh plugins
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# turn off ZLE bracketed paste in dumb term
-# otherwise turn on ZLE bracketed-paste-magic
-# if [[ $TERM == dumb ]]; then
-#   unset zle_bracketed_paste
-# else
-#   autoload -Uz bracketed-paste-magic
-#   zle -N bracketed-paste bracketed-paste-magic
-# fi
 
 # Fuzzy matching of completions for when you mistype them:
 zstyle ':completion:*' completer _complete _match _approximate
@@ -77,25 +59,15 @@ if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-
 # Add postgres tools to path
 # export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-# Hook for desk activation
-# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-# fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
-# fpath=(/path/to/desk/repo/shell_plugins/zsh $fpath)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# pyenv
-# eval "$(pyenv init -)"
-
 export REACT_EDITOR=code
+
+# Alias for Intel homebrew
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # Local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
