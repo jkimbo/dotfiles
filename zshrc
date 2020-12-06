@@ -79,8 +79,8 @@ export VIRTUALENV_DISTRIBUTE=true
 export WORKON_HOME=~/code/virtualenvs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
-[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pyenv/shims/python"
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 
@@ -89,7 +89,8 @@ if [ -e ~/.secrets ]; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
@@ -97,7 +98,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Hook for desk activation
-# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 # fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
 # fpath=(/path/to/desk/repo/shell_plugins/zsh $fpath)
 
@@ -119,3 +120,34 @@ export REACT_EDITOR=code
 
 # Local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
+export CLOUDSDK_PYTHON=/Users/jkimbo/.pyenv/shims/python
+
+source /Users/jkimbo/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+export PATH=$PATH:$HOME/.poetry/bin
+
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+export PATH=$PATH:$HOME/go/bin
+
+export GOPATH=~/go
+
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.poetry/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk 2/path.zsh.inc' ]; then . '/Users/jkimbo/Downloads/google-cloud-sdk 2/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then . '/Users/jkimbo/Downloads/google-cloud-sdk 2/completion.zsh.inc'; fi
+
+export PIP_REQUIRE_VIRTUALENV=true
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
