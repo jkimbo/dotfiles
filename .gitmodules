@@ -16,3 +16,6 @@
 [submodule "zsh"]
 	path = zsh
 	url = git@github.com:jkimbo/oh-my-zsh.git
+[submodule "solarized"]
+	path = solarized
+	url = git@github.com:altercation/solarized.git
