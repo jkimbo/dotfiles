@@ -44,8 +44,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Configuration
-source $ZSH/aliases
-source $ZSH/zsh_aliases
+source $HOME/dotfiles/aliases
+source $HOME/dotfiles/zsh_aliases
 
 # Load some zsh plugins
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
