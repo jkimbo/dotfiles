@@ -18,6 +18,12 @@ let mapleader = ','
 let g:mapleader = ","
 " let maplocalleader = "\\"
 
+" set regexpengine=1
+set noshowcmd
+set synmaxcol=200
+" let g:loaded_matchparen=1
+set nocursorline
+
 set history=1000                   " lines of history to remember
 set undofile
 set undodir=~/.vimundo
@@ -77,7 +83,7 @@ if has('statusline')
   set statusline+=%{fugitive#statusline()} "  Git Hotness
   set statusline+=\ [%{&ff}/%Y]            " filetype
   set statusline+=\ %w%h%m%r\ " Options
-  set statusline+=%=%{LinterStatus()}\ %-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
 set tabstop=2                      " spaces per tab
@@ -131,6 +137,9 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#sources#flow#flow_bin = g:flow_path
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+  call deoplete#custom#option('num_processes', 0)
+  call deoplete#custom#option('auto_refresh_delay', 0)
+  call deoplete#custom#source('tabnine', 'rank', 80)
 
   " vim tern
   let g:tern_request_timeout = 1
@@ -165,12 +174,12 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
   let g:flow#flowpath = g:flow_path
 
   " == neoformat ==
-  let g:neoformat_enabled_javascript = ['prettier']
-  let g:neoformat_javascript_prettier = {
-            \ 'exe': g:prettier_path,
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-            \ 'stdin': 1,
-            \ }
+  " let g:neoformat_enabled_javascript = ['prettier']
+  " let g:neoformat_javascript_prettier = {
+  "           \ 'exe': g:prettier_path,
+  "           \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+  "           \ 'stdin': 1,
+  "           \ }
 
 endif
 
@@ -212,18 +221,39 @@ omap <leader>c  <Plug>Commentary
 " == svermeulen/vim-easyclip ==
 set clipboard=unnamed
 nnoremap <silent> <F6> :Yanks<CR>
+let g:yoinkIncludeDeleteOperations = 1
+let g:yoinkChangeTickThreshold = 1
 " Allow seting marks with gm
-nnoremap gm m
+nnoremap m d
+xnoremap m d
+
+nnoremap mm dd
+nnoremap M D
+
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 
 " == pangloss/vim-javascript ==
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
 " == sbdchd/neoformat ==
-nnoremap <F3> :mkview<CR>:Neoformat<CR>:loadview<CR>
+" nnoremap <F3> :silent mkview!<CR>:Neoformat<CR>:silent loadview!<CR>
 " autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
 " Use formatprg when available
-let g:neoformat_try_formatprg = 1
+" let g:neoformat_try_formatprg = 1
+
+
+" Prettier
+nnoremap <F3> :Prettier<CR>
+
+" Black
+autocmd FileType python nnoremap <F3> :Black<CR>
+
+autocmd FileType go nnoremap <F3> :GoFmt<CR>
 
 " == editorconfig/editorconfig-vim ==
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -231,19 +261,55 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:vim_isort_python_version = 'python3'
 
 " == airblade/vim-rooter ==
-let g:rooter_patterns = ['package.json', 'manage.py', '.git/']
+let g:rooter_patterns = ['package.json', 'service.yml', 'manage.py', '.projectroot', '.git/']
+let g:rooter_silent_chdir = 1
+" let g:rooter_manual_only = 1
 
 " == w0rp/ale ==
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \}
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
-let g:ale_list_window_size = 5
+" let g:ale_list_window_size = 5
 " nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
+" == mhinz/vim-startify
+let g:startify_lists = [
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'sessions',  'header': ['   Sessions']       },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': 'commands',  'header': ['   Commands']       },
+  \ ]
+
+
+" == ale
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
+
+" # Function to permanently delete views created by 'mkview'
+function! MyDeleteView()
+    let path = fnamemodify(bufname('%'),':p')
+    " vim's odd =~ escaping for /
+    let path = substitute(path, '=', '==', 'g')
+    if empty($HOME)
+    else
+        let path = substitute(path, '^'.$HOME, '\~', '')
+    endif
+    let path = substitute(path, '/', '=+', 'g') . '='
+    " view directory
+    let path = &viewdir.'/'.path
+    call delete(path)
+    echo "Deleted: ".path
+endfunction
+
+" # Command Delview (and it's abbreviation 'delview')
+command Delview call MyDeleteView()
+
+let g:vim_jsx_pretty_colorful_config = 1
