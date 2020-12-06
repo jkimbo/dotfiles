@@ -16,3 +16,6 @@
 [submodule "git/git-pull-request"]
 	path = git/git-pull-request
 	url = https://github.com/jkimbo/git-pull-request.git
+[submodule "zsh"]
+	path = zsh
+	url = git@github.com:jkimbo/oh-my-zsh.git
