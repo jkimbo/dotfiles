@@ -1,26 +1,28 @@
+# Customize to your needs...
+export PATH="/opt/homebrew/bin:$HOME/bin:$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Path to your zsh configuration.
-ZSH=$HOME/dotfiles/zsh
-ZSH_CUSTOM=$HOME/dotfiles/zsh
+export ZSH=$HOME/dotfiles/zsh
 
 # Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Setup theme
 ZSH_THEME='jk'
 
-TERM=screen-256color
+#TERM=screen-256color
 #TERM=xterm-256color
 #TERM=screen-256color-bce
 #TERM=xterm-256colors
 #TERM=xterm+256colors
 
 # Tmux plugin setup
-ZSH_TMUX_AUTOSTART="true"
-ZSH_TMUX_AUTOSTART_ONCE="true"
-ZSH_TMUX_AUTOCONNECT="false"
-ZSH_TMUX_AUTOQUIT="false"
+# ZSH_TMUX_AUTOSTART="true"
+# ZSH_TMUX_AUTOSTART_ONCE="true"
+# ZSH_TMUX_AUTOCONNECT="false"
+# ZSH_TMUX_AUTOQUIT="false"
 
-export EDITOR="nvim"
+# export EDITOR="nvim"
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
@@ -29,8 +31,15 @@ zle -N edit-command-line
 # Edit line in vim mode with `e` key
 bindkey -M vicmd e edit-command-line
 
-plugins=(vi-mode git history-substring-search tmux npm yarn-autocompletions)
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# plugins=(vi-mode git history-substring-search tmux npm yarn-autocompletions)
+# fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,8 +48,8 @@ source $ZSH/aliases
 source $ZSH/zsh_aliases
 
 # Load some zsh plugins
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # turn off ZLE bracketed paste in dumb term
 # otherwise turn on ZLE bracketed-paste-magic
@@ -51,69 +60,40 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 #   zle -N bracketed-paste bracketed-paste-magic
 # fi
 
-# TODO What is this?
-__git_files () {
-    _wanted files expl 'local files' _files
-}
-
 # Fuzzy matching of completions for when you mistype them:
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# Customize to your needs...
-export PATH=$HOME/bin:$HOME/.bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/Dropbox/bin
-
-# tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# Ruby
-export PATH=$PATH:/usr/local/opt/ruby/bin
-
 # Virtualenv
-export VIRTUALENV_DISTRIBUTE=true
-export WORKON_HOME=~/code/virtualenvs
-export PROJECT_HOME=$HOME/code
-export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
-[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pyenv/shims/python"
-
-# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export VIRTUALENV_DISTRIBUTE=true
+# export WORKON_HOME=~/code/virtualenvs
+# export PROJECT_HOME=$HOME/code
+# export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
+# [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pyenv/shims/python"
 
 if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+# [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # Add postgres tools to path
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Hook for desk activation
 # [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 # fpath=($HOME/dotfiles/zsh/plugins/desk $fpath)
 # fpath=(/path/to/desk/repo/shell_plugins/zsh $fpath)
 
-# Android
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export PATH=${PATH}:${ANDROID_HOME}/build-tools/25.0.3
-
-# m-cli
-export PATH=$PATH:/usr/local/m-cli
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pyenv
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 export REACT_EDITOR=code
 
