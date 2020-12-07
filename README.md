@@ -3,10 +3,6 @@
 ## Installation
 
 * Install [homebrew](https://brew.sh/)
-* Install [homebrew bundle](https://github.com/Homebrew/homebrew-bundle): `brew tap Homebrew/bundle`
-* Install apps in `Brewfile`: `brew bundle`
-* Add `/usr/local/bin/zsh` to `/etc/shells/`
-* `chsh -s /usr/local/bin/zsh # change default shell to zsh`
 * Symlink zsh config: `cd ~/ && ln -s dotfiles/zshrc .zshrc`
 * Symlink tmux config: `ln -s dotfiles/tmux.conf .tmux.conf`
 * Start iTerm

@@ -19,3 +19,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = git@github.com:altercation/solarized.git
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm
