@@ -15,8 +15,6 @@ syntax enable
 " === General settings ===
 
 let mapleader = ','
-let g:mapleader = ","
-" let maplocalleader = "\\"
 
 set history=1000                   " lines of history to remember
 set undofile
@@ -29,7 +27,6 @@ set noswapfile                     " no swapfile
 set fileformats=unix               " always use Unix file format
 
 " Colour scheme
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme solarized
 
@@ -53,8 +50,8 @@ set viminfo='100                                            " save marks and jum
 set whichwrap=b,s,>,<                                       " which movement chars move lines
 set winminheight=0                                          " window minimum height is 0
 " set showmatch                                               " highlight matching [{()}]
-set lazyredraw                                              " fixes scrolling slowness
-set ttimeoutlen=2
+" set lazyredraw                                              " fixes scrolling slowness
+" set ttimeoutlen=2
 
 if has('statusline')
   set laststatus=2
@@ -121,8 +118,8 @@ let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 let g:prettier_path = StrTrim(system('PATH=$(npm bin):$PATH && which prettier'))
 let g:eslint_path = StrTrim(system('PATH=$(npm bin):$PATH && which eslint'))
 
-let g:python_host_prog = $HOME.'/.pyenv/versions/2.7.13/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
+let g:python_host_prog = "python2" " $HOME.'/.pyenv/versions/2.7.13/bin/python'
+let g:python3_host_prog = "python" " $HOME.'/.pyenv/versions/3.6.0/bin/python'
 
 " === Plugin settings ===
  if has('nvim')
@@ -136,46 +133,22 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/3.6.0/bin/python'
   let g:tern_request_timeout = 1
   let g:tern_show_signature_in_pum = 0
 
-  " neosnippet complete
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-  " == scrooloose/syntastic ==
-  let g:syntastic_auto_loc_list=1
-  let g:syntastic_loc_list_height=5
-  let g:syntastic_aggregate_errors = 1
-  let g:syntastic_mode_map = { 'mode': 'active',
-                              \ 'active_filetypes': [],
-                              \ 'passive_filetypes': ['less', 'phtml', 'html'] }
-  let g:syntastic_python_checkers=['python', 'flake8']
-  " let g:syntastic_python_flake8_exec = '/Users/jkimbo/bin/flake8.sh'
-  let g:syntastic_scss_checkers=['sass', 'scss_lint']
-  let g:syntastic_css_checkers=['stylelint']
-  let g:syntastic_php_checkers=['php']
-  let g:syntastic_javascript_checkers=['eslint', 'flow']
-  let g:syntastic_javascript_eslint_exec = g:eslint_path
-  let g:syntastic_javascript_flow_exec = g:flow_path
-  let g:syntastic_jsx_checkers=['eslint']
-  let g:syntastic_jsx_eslint_exec = g:eslint_path
-  let g:syntastic_javascript_jsx_checkers=['eslint']
-  let g:syntastic_javascript_jsx_eslint_exec = g:eslint_path
-
-  " == flowtype/vim-flow ==
-  let g:flow#autoclose = 1
-  let g:flow#enable = 1
-  let g:flow#flowpath = g:flow_path
-
-  " == neoformat ==
-  let g:neoformat_enabled_javascript = ['prettier']
-  let g:neoformat_javascript_prettier = {
-            \ 'exe': g:prettier_path,
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-            \ 'stdin': 1,
-            \ }
-
 endif
 
+" neosnippet complete
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" == neoformat ==
+let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_javascript_prettier = {
+    \ 'exe': g:prettier_path,
+    \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+    \ 'stdin': 1,
+    \ }
+
 " == junegunn/fzf ==
-nnoremap <leader>t :FZF<CR> 
+nnoremap <leader>t :Files<CR> 
+let g:fzf_layout = { 'down': '40%' }
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " == mxw/vim-jsx ==
@@ -242,6 +215,10 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
+augroup CloseLoclistWindowGroup
+  autocmd!
+  autocmd QuitPre * if empty(&buftype) | lclose | endif
+augroup END
 " nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-m> <Plug>(ale_next_wrap)
 

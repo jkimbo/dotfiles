@@ -1,6 +1,8 @@
 " == General editor plugins ==
+Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -13,7 +15,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sbdchd/neoformat'
 Plug 'airblade/vim-rooter'
-Plug 'mhinz/vim-startify'
+Plug 'w0rp/ale'
 
 " == Autocomplete plugins ==
 if has('nvim')		
@@ -23,7 +25,6 @@ if has('nvim')
   Plug 'zchee/deoplete-jedi', { 'do': 'pip3 install jedi' }		
   Plug 'Shougo/neosnippet'		
   Plug 'Shougo/neosnippet-snippets'		
-  Plug 'w0rp/ale'
 endif
 
 " == JavaScript syntax highlighting ==
@@ -32,16 +33,12 @@ Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 " Plug 'leafgarland/typescript-vim'
 
-
-" == JavaScript tools integration ==
-" Plug 'scrooloose/syntastic'
-
 " == Python tools ==
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'fisadev/vim-isort'
 
 " == Prettier ==
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " == Black ==
-Plug 'python/black'
+" Plug 'python/black'
