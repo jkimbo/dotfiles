@@ -1,5 +1,6 @@
 " == General editor plugins ==
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

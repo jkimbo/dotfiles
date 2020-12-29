@@ -211,16 +211,11 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \}
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 0
 let g:ale_list_window_size = 5
-augroup CloseLoclistWindowGroup
-  autocmd!
-  autocmd QuitPre * if empty(&buftype) | lclose | endif
-augroup END
-" nmap <silent> <C-n> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-m> <Plug>(ale_next_wrap)
+nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
