@@ -24,7 +24,7 @@ bindkey -M vicmd e edit-command-line
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(git history-substring-search)
 
 # Tmux plugin setup
 ZSH_TMUX_AUTOSTART="true"
@@ -47,27 +47,51 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-# Virtualenv
-# export VIRTUALENV_DISTRIBUTE=true
-# export WORKON_HOME=~/code/virtualenvs
-# export PROJECT_HOME=$HOME/code
-# export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python
-# [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
-# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS="--python $HOME/.pyenv/shims/python"
-
 if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
-# Add postgres tools to path
-# export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+# TOOLS SETUP
+
+# Setup pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Setup poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Created by `userpath` on 2020-12-08 17:31:57
+export PATH="/Users/jkimbo/.local/bin:$PATH"
+
+# Virtualenv
+export WORKON_HOME=~/code/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=~/.local/pipx/venvs/virtualenvwrapper/bin/python
+# Only source virtualenvwrapper if it's installed
+# (virtualenvwrapper installed through pipx)
+if command -v virtualenvwrapper.sh &> /dev/null; then
+    source virtualenvwrapper.sh
+fi
+
+# Nodenv
+eval "$(nodenv init -)"
+
+
+# Gcloud SDK
+CLOUDSDK_PYTHON=/usr/local/opt/python@3.8/bin/python
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export REACT_EDITOR=code
+export REACT_EDITOR="vim"
 
 # Alias for Intel homebrew
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 # Local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jkimbo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jkimbo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
