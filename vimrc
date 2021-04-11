@@ -122,29 +122,15 @@ let g:python_host_prog = "python2" " $HOME.'/.pyenv/versions/2.7.13/bin/python'
 let g:python3_host_prog = "python" " $HOME.'/.pyenv/versions/3.6.0/bin/python'
 
 " === Plugin settings ===
- if has('nvim')
-  set completeopt-=preview
 
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#sources#flow#flow_bin = g:flow_path
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" Completion
+set completeopt-=preview
 
-  " vim tern
-  let g:tern_request_timeout = 1
-  let g:tern_show_signature_in_pum = 0
-
-endif
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " neosnippet complete
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" == neoformat ==
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_javascript_prettier = {
-    \ 'exe': g:prettier_path,
-    \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-    \ 'stdin': 1,
-    \ }
 
 " == junegunn/fzf ==
 nnoremap <leader>t :Files<CR> 
@@ -182,21 +168,26 @@ xmap <leader>c  <Plug>Commentary
 nmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
 
-" == svermeulen/vim-easyclip ==
+" == svermeulen/vim-cutlass ==
 set clipboard=unnamed
-nnoremap <silent> <F6> :Yanks<CR>
-" Allow seting marks with gm
-nnoremap gm m
+let g:yoinkIncludeDeleteOperations = 1
+let g:yoinkChangeTickThreshold = 1
+
+nnoremap m d
+xnoremap m d
+
+nnoremap mm dd
+nnoremap M D
+
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 
 " == pangloss/vim-javascript ==
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
-
-" == sbdchd/neoformat ==
-nnoremap <F3> :mkview<CR>:Neoformat<CR>:loadview<CR>
-" autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
-" Use formatprg when available
-let g:neoformat_try_formatprg = 1
 
 " == editorconfig/editorconfig-vim ==
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -204,14 +195,15 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:vim_isort_python_version = 'python3'
 
 " == airblade/vim-rooter ==
-let g:rooter_patterns = ['package.json', 'manage.py', '.git/']
+let g:rooter_patterns = ['package.json', 'service.yml', 'manage.py', '.projectroot', '.git/']
+" let g:rooter_silent_chdir = 1
 
 " == w0rp/ale ==
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \}
-let g:ale_open_list = 1
+" let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 0
 let g:ale_list_window_size = 5
 nmap <silent> <C-n> <Plug>(ale_previous_wrap)
@@ -219,3 +211,22 @@ nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " === Keybindings ===
 source ~/dotfiles/vim/keybindings.vim
+
+" # Function to permanently delete views created by 'mkview'
+function! MyDeleteView()
+    let path = fnamemodify(bufname('%'),':p')
+    " vim's odd =~ escaping for /
+    let path = substitute(path, '=', '==', 'g')
+    if empty($HOME)
+    else
+        let path = substitute(path, '^'.$HOME, '\~', '')
+    endif
+    let path = substitute(path, '/', '=+', 'g') . '='
+    " view directory
+    let path = &viewdir.'/'.path
+    call delete(path)
+    echo "Deleted: ".path
+endfunction
+
+" # Command Delview (and it's abbreviation 'delview')
+command Delview call MyDeleteView()
