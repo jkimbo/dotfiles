@@ -11,7 +11,11 @@ alias ..='cd ..'
 alias cdb='cd -'
 
 # New ls
-alias ls='gls --color=auto'
+if [[ $(uname -s) == "Darwin" ]]; then
+  alias ls='gls --color=auto'
+else
+  alias ls='ls --color=auto'
+fi
 
 # Show human friendly numbers and colors
 alias df='df -h'

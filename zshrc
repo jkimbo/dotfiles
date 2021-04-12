@@ -54,6 +54,9 @@ fi
 # TOOLS SETUP
 
 # Setup pyenv
+if [[ $(uname -s) == "Linux" ]]; then
+  export PATH="/home/jkimbo/.pyenv/bin:$PATH"
+fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -73,6 +76,9 @@ if command -v virtualenvwrapper.sh &> /dev/null; then
 fi
 
 # Nodenv
+if [[ $(uname -s) == "Linux" ]]; then
+  export PATH="/home/jkimbo/.nodenv/bin:$PATH"
+fi
 eval "$(nodenv init -)"
 
 
