@@ -26,7 +26,7 @@ alias la='ls -A --group-directories-first'
 alias lsg='ll | grep'
 
 # vim -> neovim
-# alias vim='nvim'
+alias vim='nvim'
 
 # Alias Editing
 alias ae='vim ~/dotfiles/zsh/aliases' # alias edit

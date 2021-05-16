@@ -24,13 +24,16 @@ bindkey -M vicmd e edit-command-line
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search)
+plugins=(git history-substring-search deno)
 
 # Tmux plugin setup
 ZSH_TMUX_AUTOSTART="true"
 ZSH_TMUX_AUTOSTART_ONCE="true"
 ZSH_TMUX_AUTOCONNECT="false"
 ZSH_TMUX_UNICODE="true"
+
+# Disable auto update
+DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 
