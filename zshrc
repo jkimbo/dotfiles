@@ -10,7 +10,7 @@ export ZSH=$HOME/dotfiles/zsh
 # Setup theme
 ZSH_THEME='jk'
 
-# export EDITOR="nvim"
+export EDITOR="nvim"
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
@@ -56,12 +56,19 @@ fi
 
 # TOOLS SETUP
 
+# Add snap bin
+if [[ $(uname -s) == "Linux" ]]; then
+  export PATH="/snap/bin:$PATH"
+fi
+
 # Setup pyenv
 if [[ $(uname -s) == "Linux" ]]; then
   export PATH="/home/jkimbo/.pyenv/bin:$PATH"
 fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export PIP_REQUIRE_VIRTUALENV=true
 
 # Setup poetry
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -84,6 +91,13 @@ if [[ $(uname -s) == "Linux" ]]; then
 fi
 eval "$(nodenv init -)"
 
+# Go
+if [[ $(uname -s) == "Linux" ]]; then
+  export PATH="$PATH:/usr/local/go/bin"
+fi
+
+# Setup direnv
+eval "$(direnv hook zsh)"
 
 # Gcloud SDK
 CLOUDSDK_PYTHON=/usr/local/opt/python@3.8/bin/python

@@ -85,3 +85,9 @@ release_cache/
 # Node modules #
 ###############
 node_modules/
+
+# Direnv files
+.envrc
+
+# Pyenv
+.python-version
