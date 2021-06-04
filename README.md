@@ -34,6 +34,13 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 source ./macos
 ```
 
+## Direnv
+
+```bash
+mkdir -p ~/.config/direnv
+ln -s ~/dotfiles/direnvrc ~/.config/direnv/direnvrc
+```
+
 ## Useful commands
 
 ### Vim
