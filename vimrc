@@ -157,7 +157,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " == mileszs/ack.vim ==
 let g:ackprg = 'ag --nogroup --nocolor --column'
-nnoremap <leader>a :Ack 
+cnoreabbrev Ack Ack!
+nnoremap <leader>a :Ack!<Space>
 
 " == sjl/gundo.vim ==
 nnoremap <F5> :GundoToggle<CR>
