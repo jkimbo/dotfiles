@@ -170,7 +170,7 @@ nmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
 
 " == svermeulen/vim-cutlass ==
-set clipboard=unnamed
+set clipboard=unnamedplus
 let g:yoinkIncludeDeleteOperations = 1
 let g:yoinkChangeTickThreshold = 1
 

@@ -75,7 +75,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # Created by `userpath` on 2020-12-08 17:31:57
-export PATH="/Users/jkimbo/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Virtualenv
 export WORKON_HOME=~/code/virtualenvs
@@ -95,6 +95,11 @@ eval "$(nodenv init -)"
 # Go
 if [[ $(uname -s) == "Linux" ]]; then
   export PATH="$PATH:/usr/local/go/bin"
+fi
+
+# Homebrew for linux
+if [[ $(uname -s) == "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # Setup direnv

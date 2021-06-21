@@ -53,3 +53,6 @@ Plug 'fisadev/vim-isort'
 
 " == Black ==
 Plug 'psf/black', { 'branch': 'stable' }
+
+" == Golang ==
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
