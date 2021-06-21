@@ -88,6 +88,7 @@ node_modules/
 
 # Direnv files
 .envrc
+.direnv/
 
 # Pyenv
 .python-version
