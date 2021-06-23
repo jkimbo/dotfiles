@@ -124,3 +124,5 @@ if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jkimbo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jkimbo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"

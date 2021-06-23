@@ -49,7 +49,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'fisadev/vim-isort'
 
 " == Prettier ==
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier'
 
 " == Black ==
 Plug 'psf/black', { 'branch': 'stable' }
